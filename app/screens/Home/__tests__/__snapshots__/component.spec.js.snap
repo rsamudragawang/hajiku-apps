@@ -1,0 +1,41 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Component snapshot testing renders with data 1`] = `
+<MainScreen
+  isLoading={false}
+>
+  <Header
+    back={true}
+    setting={true}
+    title="Home"
+  />
+  <View
+    style={
+      Object {
+        "backgroundColor": "#FFFFFF",
+        "flex": 1,
+      }
+    }
+  />
+</MainScreen>
+`;
+
+exports[`Component snapshot testing renders without data 1`] = `
+<MainScreen
+  isLoading={false}
+>
+  <Header
+    back={true}
+    setting={true}
+    title="Home"
+  />
+  <View
+    style={
+      Object {
+        "backgroundColor": "#FFFFFF",
+        "flex": 1,
+      }
+    }
+  />
+</MainScreen>
+`;

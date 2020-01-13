@@ -1,0 +1,56 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Component snapshot testing renders without data 1`] = `
+<View
+  style={
+    Object {
+      "flex": 1,
+    }
+  }
+>
+  <View
+    style={
+      Object {
+        "alignItems": "flex-start",
+        "backgroundColor": "#289F97",
+        "height": 150,
+        "justifyContent": "flex-end",
+        "paddingBottom": 10,
+        "paddingLeft": 10,
+      }
+    }
+  >
+    <Text
+      accessible={true}
+      allowFontScaling={true}
+      ellipsizeMode="tail"
+      style={
+        Object {
+          "color": "#FFFFFF",
+          "fontFamily": "Quicksand-Regular",
+          "fontSize": 16,
+          "paddingHorizontal": 5,
+        }
+      }
+    >
+      component
+    </Text>
+    <Text
+      accessible={true}
+      allowFontScaling={true}
+      ellipsizeMode="tail"
+      style={
+        Object {
+          "color": "#FFFFFF",
+          "fontFamily": "Quicksand-Regular",
+          "fontSize": 14,
+          "marginBottom": 5,
+          "paddingHorizontal": 5,
+        }
+      }
+    >
+      SideBar
+    </Text>
+  </View>
+</View>
+`;

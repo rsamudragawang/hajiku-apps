@@ -1,0 +1,24 @@
+{
+  "camera": "Kamera",
+  "cancel": "Kembali",
+  "checkConnection": "Tidak ada koneksi. \nCek Koneksi internet anda.",
+  "country": "negara",
+  "email": "Email",
+  "error" : {
+    "timeOutConnection": "Koneksi timeout. silahkan coba beberapa saat lagi."
+  },
+  "gallery": "Galeri",
+  "loading": "Loading ...",
+  "oops": "Oops!",
+  "password": "Password",
+  "phoneNumber": "Nomor telepon",
+  "pleaseTryAgain": "Silahkan coba lagi",
+  "rememberMe": "Remember me",
+  "selectDate": "Pilih Tanggal : ",
+  "selectFrom": "Pilih Dari : ",
+  "submit": "Submit",
+  "tryAgain": "Coba Lagi",
+  "update": "Perbarui",
+  "updateBody": "Harap perbarui aplikasi ke versi baru, \n untuk mendapatkan konten-konten terbaru",
+  "updateTitle": "Perbarui"  
+}

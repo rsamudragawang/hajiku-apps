@@ -1,0 +1,75 @@
+{
+  "name": "component",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "convertSvgToJs": "npx @svgr/cli --native  -d assets/svgs assets/images",
+    "eslint": "eslint app __tests__ index.* --ext .js .jsx --cache",
+    "eslint:fix": "npm run eslint -- --fix",
+    "precommit": "npm run eslint",
+    "prepush": "npm run eslint",
+    "start": "node node_modules/react-native/local-cli/cli.js start",
+    "test": "jest",
+    "test:updateSnapshot": "npm run test -- --updateSnapshot",
+    "test:coverage": "npm run test -- --coverage "
+  },
+  "dependencies": {
+    "lodash": "^4.17.10",
+    "moment": "^2.22.2",
+    "react": "16.6.0-alpha.8af6728",
+    "react-native": "0.54.2",
+    "react-native-i18n": "^2.0.12",
+    "react-native-svg": "^7.0.3",
+    "react-navigation": "^1.5.8",
+    "react-redux": "^5.0.7",
+    "redux": "^3.7.2",
+    "redux-form": "^7.4.2",
+    "redux-thunk": "^2.2.0",
+    "rn-fetch-blob": "^0.10.14"
+  },
+  "devDependencies": {
+    "@svgr/cli": "^3.0.0",
+    "babel-core": "^6.26.0",
+    "babel-eslint": "^8.2.2",
+    "babel-jest": "23.6.0",
+    "babel-preset-react-native": "4.0.0",
+    "enzyme": "^3.3.0",
+    "enzyme-adapter-react-16": "^1.1.1",
+    "eslint": "^4.18.2",
+    "eslint-config-airbnb": "^16.1.0",
+    "eslint-config-prettier": "^2.9.0",
+    "eslint-plugin-import": "^2.9.0",
+    "eslint-plugin-jest": "^21.15.0",
+    "eslint-plugin-jsx-a11y": "^6.0.3",
+    "eslint-plugin-prettier": "^2.6.0",
+    "eslint-plugin-react": "^7.7.0",
+    "eslint-plugin-react-native": "^3.2.1",
+    "husky": "^0.14.3",
+    "jest": "23.6.0",
+    "prettier": "^1.11.1",
+    "prop-types": "^15.6.1",
+    "react-dom": "^16.3.1",
+    "react-test-renderer": "16.6.0-alpha.8af6728"
+  },
+  "jest": {
+    "preset": "react-native",
+    "moduleNameMapper": {
+      "\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$": "<rootDir>/tests/assetsTransformer.js",
+      "\\.(css|less)$": "<rootDir>/tests/assetsTransformer.js"
+    },
+    "setupFiles": [
+      "./tests/enzymeTestAdapterSetup.js"
+    ],
+    "collectCoverageFrom": [
+      "app/components/**/*.js",
+      "app/screens/**/*.js",
+      "app/utils/**/*.js"
+    ],
+    "transformIgnorePatterns": []
+  },
+  "rnpm": {
+    "assets": [
+      "./assets/fonts/"
+    ]
+  }
+}

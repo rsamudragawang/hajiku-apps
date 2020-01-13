@@ -1,0 +1,24 @@
+{
+  "camera": "Camera",
+  "cancel": "Cancel",
+  "checkConnection": "No internet connection found. \nCheck your connection.",
+  "country": "country",
+  "email": "Email",
+  "error": {
+    "timeOutConnection": "Connection timeout. Please try again later."
+  },
+  "gallery": "Gallery",
+  "loading": "Loading ...",
+  "oops": "Oops!",
+  "password": "Password",
+  "phoneNumber": "Phone number",
+  "pleaseTryAgain": "Please try again",
+  "rememberMe": "Remember me",
+  "selectDate": "Select Date : ",
+  "selectFrom": "Select From : ",
+  "submit": "Submit",
+  "tryAgain": "Try again",
+  "update": "Update",
+  "updateBody": "Please update the application to the new version, \n to get the new contents",
+  "updateTitle": "Update"
+}

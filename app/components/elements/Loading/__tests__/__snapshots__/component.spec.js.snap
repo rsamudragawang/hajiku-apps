@@ -1,0 +1,55 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Component snapshot testing renders without data 1`] = `
+<View
+  style={
+    Array [
+      undefined,
+      Object {
+        "alignItems": "center",
+        "height": 1334,
+        "justifyContent": "center",
+        "position": "absolute",
+        "width": 750,
+        "zIndex": 2,
+      },
+    ]
+  }
+>
+  <View
+    style={
+      Object {
+        "alignItems": "center",
+        "backgroundColor": "rgba(0,0,0,0.5)",
+        "borderRadius": 5,
+        "flexDirection": "row",
+        "paddingHorizontal": 20,
+        "paddingVertical": 15,
+        "width": 450,
+      }
+    }
+  >
+    <ActivityIndicator
+      animating={true}
+      color="#FFFFFF"
+      hidesWhenStopped={true}
+      size="large"
+    />
+    <Text
+      accessible={true}
+      allowFontScaling={true}
+      ellipsizeMode="tail"
+      style={
+        Object {
+          "color": "#FFFFFF",
+          "fontFamily": "Quicksand-Regular",
+          "fontSize": 16,
+          "marginLeft": 20,
+        }
+      }
+    >
+      Loading ...
+    </Text>
+  </View>
+</View>
+`;

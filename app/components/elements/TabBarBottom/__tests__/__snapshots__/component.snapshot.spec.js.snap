@@ -1,0 +1,5 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Component snapshot testing renders with default props 1`] = `null`;
+
+exports[`Component snapshot testing renders with isVisible = true 1`] = `<TabBarBottom />`;
