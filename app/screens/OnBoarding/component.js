@@ -1,7 +1,10 @@
 import React from 'react';
-import { View } from 'react-native';
+import { View, Image } from 'react-native';
 import PropTypes from 'prop-types';
-import Search from '../../components/elements/Input/TextArea';
+import IMAGES from '../../configs/images';
+import styles from './styles';
+import Logo from '../../../assets/svgs/Logo';
+import Button from '../../components/elements/Button';
 
 export default class Component extends React.Component {
   _onPress = () => {
@@ -10,9 +13,44 @@ export default class Component extends React.Component {
 
   render() {
     return (
-      <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-        {/* <Button title="title" disabled={false} onPress={this._onPress} type="raised-ripple" /> */}
-        <Search />
+      <View style={{ flex: 1, backgroundColor: '#F9FAFB' }}>
+        <View style={{ alignItems: 'flex-end' }}>
+          <Image source={IMAGES.hiasan} style={styles.hiasan} />
+        </View>
+        <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
+          <Logo />
+        </View>
+        <View
+          style={{
+            flex: 1,
+            justifyContent: 'flex-end',
+            alignItems: 'center',
+            paddingBottom: 54,
+            height: 150
+          }}
+        >
+          <Button
+            title="Mulai Sekarang"
+            customContainer={{
+              backgroundColor: '#FF5151',
+              borderRadius: 5,
+              width: 328,
+              height: 50,
+              marginBottom: 10
+            }}
+            customText={{ color: '#fff', letterSpacing: 300 }}
+          />
+          <Button
+            title="Masuk"
+            customContainer={{
+              backgroundColor: '#FFF',
+              width: 328,
+              height: 50,
+              borderWidth: 1
+            }}
+            customText={{ color: '#000' }}
+          />
+        </View>
       </View>
     );
   }

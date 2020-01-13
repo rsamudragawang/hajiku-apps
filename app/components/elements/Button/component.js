@@ -46,7 +46,7 @@ Component.propTypes = {
 
 Component.defaultProps = {
   disabled: false,
-  isUpperCase: true,
+  isUpperCase: false,
   customContainer: {},
   customText: {},
   type: 'raised'

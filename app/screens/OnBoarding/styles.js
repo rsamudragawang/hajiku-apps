@@ -12,6 +12,10 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center'
   },
+  hiasan: {
+    width: 141,
+    height: 203
+  },
   text: {
     fontSize: 20
   }
