@@ -11,7 +11,12 @@ export default class Component extends React.Component {
   _onPress = () => {
     this.props.navigation.navigate('App');
   };
-
+  _toRegister = () => {
+    this.props.navigation.navigate('Register');
+  };
+  _toLogin = () => {
+    this.props.navigation.navigate('Login');
+  };
   render() {
     return (
       <View style={{ flex: 1, backgroundColor: '#F9FAFB' }}>
@@ -31,6 +36,7 @@ export default class Component extends React.Component {
           }}
         >
           <Button
+            onPress={this._toRegister}
             title="Mulai Sekarang"
             customContainer={{
               backgroundColor: '#FF5151',
@@ -42,6 +48,7 @@ export default class Component extends React.Component {
             customText={{ color: '#fff', letterSpacing: 300 }}
           />
           <Button
+            onPress={this._toLogin}
             title="Masuk"
             customContainer={{
               backgroundColor: '#FFF',

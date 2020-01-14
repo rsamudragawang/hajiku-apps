@@ -9,12 +9,15 @@ import styles from './styles';
 import Locked from '../../../assets/svgs/Locked';
 import I18n from '../../i18n';
 import { scale } from '../../utils/scaling';
+import Email from '../../../assets/svgs/Email';
 
 export default class Component extends React.Component {
   constructor(props) {
     super(props);
     // this.handleBackButtonClick = this.handleBackButtonClick.bind(this);
     this.state = {
+      fullName: '',
+      nickName: '',
       email: '',
       password: '',
       hidden: true
@@ -22,17 +25,47 @@ export default class Component extends React.Component {
     // this._showPass = this._showPass.bind(this);
   }
   _onPress = () => {};
-  _toRegister = () => {
-    this.props.navigation.navigate('Register');
+  _toLogin = () => {
+    this.props.navigation.navigate('Login');
   };
   render() {
     return (
       <View style={styles.container}>
-        <Text style={styles.title}>{I18n.t('login')}</Text>
-        <Text style={styles.text}>{I18n.t('email')}</Text>
+        <Text style={styles.title}>{I18n.t('register')}</Text>
+        <Text style={styles.text}>{I18n.t('fullName')}</Text>
         <View style={styles.inputText}>
           <View style={styles.inputLogo}>
             <Account />
+          </View>
+          <TextInput
+            style={styles.input}
+            textContentType="emailAddress"
+            underlineColorAndroid="transparent"
+            placeholder={I18n.t('fullName')}
+            editable
+            autoCapitalize="none"
+            onChangeText={fullName => this.setState({ fullName })}
+          />
+        </View>
+        <Text style={styles.text}>{I18n.t('nickName')}</Text>
+        <View style={styles.inputText}>
+          <View style={styles.inputLogo}>
+            <Account />
+          </View>
+          <TextInput
+            style={styles.input}
+            textContentType="emailAddress"
+            underlineColorAndroid="transparent"
+            placeholder={I18n.t('nickName')}
+            editable
+            autoCapitalize="none"
+            onChangeText={nickName => this.setState({ nickName })}
+          />
+        </View>
+        <Text style={styles.text}>{I18n.t('email')}</Text>
+        <View style={styles.inputText}>
+          <View style={styles.inputLogo}>
+            <Email />
           </View>
           <TextInput
             style={styles.input}
@@ -72,9 +105,9 @@ export default class Component extends React.Component {
           customText={{ color: '#fff', letterSpacing: 300 }}
         />
         <View style={{ flexDirection: 'row', marginLeft: 15 }}>
-          <Text>Belum punya akun? </Text>
-          <TouchableOpacity onPress={this._toRegister}>
-            <Text style={{ color: '#FF5151' }}> Daftar Sekarang </Text>
+          <Text>Sudah punya akun? </Text>
+          <TouchableOpacity onPress={this._toLogin}>
+            <Text style={{ color: '#FF5151' }}> Masuk Sekarang </Text>
           </TouchableOpacity>
         </View>
       </View>
