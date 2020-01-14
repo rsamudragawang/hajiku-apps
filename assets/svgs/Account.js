@@ -1,37 +1,14 @@
-import React from "react";
-import Svg, { G, Circle, Path } from "react-native-svg";
-import { COLOR_BASE_PRIMARY_LIGHT } from '../../app/styles';
+import React from 'react';
+import Svg, { Path } from 'react-native-svg';
 /* SVGR has dropped some elements not supported by react-native-svg: style */
 
-const SvgAccount = props => {
-  const color = props.active ? COLOR_BASE_PRIMARY_LIGHT : "none";
-  const colorSeccond = props.active ? COLOR_BASE_PRIMARY_LIGHT : "none";
-  return (
-    <Svg height={48} width={48} viewBox="0 0 48 48" {...props}>
-      <G fill="none" fillRule="evenodd">
-        <Circle
-          fill={color}
-          stroke={COLOR_BASE_PRIMARY_LIGHT}
-          strokeLinecap="round"
-          strokeLinejoin="round"
-          strokeWidth={0.7}
-          strokeMiterlimit={10}
-          cx={24}
-          cy={19.15}
-          r={7.264}
-        />
-        <Path
-          fill={colorSeccond}
-          stroke={COLOR_BASE_PRIMARY_LIGHT}
-          strokeLinecap="round"
-          strokeLinejoin="round"
-          strokeWidth={0.7}
-          strokeMiterlimit={10}
-          d="M19.122 17.236a4.483 4.483 0 0 1 5.274-3.517M11.542 36.113c0-3.89 3.182-7.072 7.072-7.072h10.772c3.89 0 7.072 3.182 7.072 7.072M18.982 18.687s-.108.993 0 1.449"
-        />
-      </G>
-    </Svg>
-  );
-}
+const SvgAccount = props => (
+  <Svg width={20} height={20} viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg" {...props}>
+    <Path
+      d="M10 2.16667C10.9725 2.16667 11.9051 2.55298 12.5927 3.24061C13.2804 3.92825 13.6667 4.86088 13.6667 5.83334C13.6667 6.8058 13.2804 7.73843 12.5927 8.42606C11.9051 9.1137 10.9725 9.50001 10 9.50001C9.02756 9.50001 8.09493 9.1137 7.4073 8.42606C6.71966 7.73843 6.33335 6.8058 6.33335 5.83334C6.33335 4.86088 6.71966 3.92825 7.4073 3.24061C8.09493 2.55298 9.02756 2.16667 10 2.16667ZM10 12.5833C12.2414 12.5833 14.2449 13.0383 15.6696 13.7506C17.1241 14.4778 17.8334 15.3903 17.8334 16.25C17.8334 17.1245 17.1245 17.8333 16.25 17.8333H3.75002C2.87557 17.8333 2.16669 17.1245 2.16669 16.25C2.16669 15.3903 2.87591 14.4778 4.3304 13.7506C5.75511 13.0383 7.75867 12.5833 10 12.5833Z"
+      stroke="#6C6C61"
+    />
+  </Svg>
+);
 
 export default SvgAccount;

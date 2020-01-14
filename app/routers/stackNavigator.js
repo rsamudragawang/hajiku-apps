@@ -5,6 +5,7 @@ import UploadPhoto from '../screens/UploadPhoto';
 import History from '../screens/History';
 import Account from '../screens/Account';
 import OnBoarding from '../screens/OnBoarding';
+import Login from '../screens/Login';
 
 export const HomeStack = StackNavigator(
   {
@@ -68,12 +69,19 @@ export const AccountStack = StackNavigator(
 
 export const OnBoardingStack = StackNavigator(
   {
+    Login: {
+      screen: Login,
+      navigationOptions: {
+        tabBarVisible: false
+      }
+    },
     OnBoarding: {
       screen: OnBoarding,
       navigationOptions: {
         tabBarVisible: false
       }
     }
+  
   },
   { headerMode: 'none', navigationOptions: { tabBarVisible: false } }
 );
