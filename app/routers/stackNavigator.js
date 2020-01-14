@@ -7,6 +7,7 @@ import Account from '../screens/Account';
 import OnBoarding from '../screens/OnBoarding';
 import Login from '../screens/Login';
 import Register from '../screens/Register';
+import Beranda from '../screens/Beranda';
 
 export const HomeStack = StackNavigator(
   {
@@ -91,3 +92,15 @@ export const OnBoardingStack = StackNavigator(
   },
   { headerMode: 'none', navigationOptions: { tabBarVisible: false } }
 );
+
+export const BerandaStack = StackNavigator(
+  {
+    Beranda: {
+      screen: Beranda,
+      navigationOptions: {
+        tabBarVisible: false
+      }
+    },
+  },
+  { headerMode: 'none', navigationOptions: { tabBarVisible: false } }
+)
