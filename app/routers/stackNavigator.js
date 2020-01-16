@@ -71,8 +71,8 @@ export const AccountStack = StackNavigator(
 
 export const OnBoardingStack = StackNavigator(
   {
-    OnBoarding: {
-      screen: OnBoarding,
+    Login: {
+      screen: Login,
       navigationOptions: {
         tabBarVisible: false
       }
@@ -83,12 +83,13 @@ export const OnBoardingStack = StackNavigator(
         tabBarVisible: false
       }
     },
-    Login: {
-      screen: Login,
+    OnBoarding: {
+      screen: OnBoarding,
       navigationOptions: {
         tabBarVisible: false
       }
-    }
+    },
+    
   },
   { headerMode: 'none', navigationOptions: { tabBarVisible: false } }
 );

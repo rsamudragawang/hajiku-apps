@@ -1,7 +1,8 @@
+/* eslint-disable no-unused-vars */
 /* eslint-disable react-native/no-color-literals */
 /* eslint-disable react/no-unused-state */
 import React from 'react';
-import { View, TextInput, Text, TouchableOpacity } from 'react-native';
+import { View, TextInput, Text, TouchableOpacity, ToastAndroid, Alert } from 'react-native';
 import PropTypes from 'prop-types';
 import Button from '../../components/elements/Button';
 import Account from '../../../assets/svgs/Account';
@@ -9,6 +10,9 @@ import styles from './styles';
 import Locked from '../../../assets/svgs/Locked';
 import I18n from '../../i18n';
 import { scale } from '../../utils/scaling';
+import { ENDPOINT } from '../../configs';
+import { STORAGE_KEY } from '../../constants';
+import storage from '../../utils/storage';
 
 export default class Component extends React.Component {
   constructor(props) {
@@ -21,7 +25,31 @@ export default class Component extends React.Component {
     };
     // this._showPass = this._showPass.bind(this);
   }
-  _onPress = () => {};
+  _onPress = async () => {
+    const { email, password } = this.state;
+    const params = { email, password };
+    if (email === '' && password === '') {
+      Alert.alert('Isi SEMUA WOI!');
+    } else {
+      try {
+        console.log(params);
+        const result = await ENDPOINT.login(params);
+        console.log(result);
+
+        if (result.code === 200) {
+          console.log('bener');
+          Alert.alert(JSON.stringify(result.code), 'Succses');
+          this.props.navigation.navigate('Beranda');
+        } else {
+          ToastAndroid.show('Failed to Register', ToastAndroid.SHORT);
+          console.log('salah');
+        }
+      } catch (error) {
+        ToastAndroid.show('error.networkError', ToastAndroid.SHORT);
+        console.log(error);
+      }
+    }
+  };
   _toRegister = () => {
     this.props.navigation.navigate('Register');
   };
@@ -60,6 +88,7 @@ export default class Component extends React.Component {
           />
         </View>
         <Button
+          onPress={this._onPress}
           title="Masuk"
           customContainer={{
             backgroundColor: '#FF5151',

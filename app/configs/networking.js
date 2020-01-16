@@ -1,15 +1,63 @@
+/* eslint-disable no-unused-vars */
+/* eslint-disable no-unused-expressions */
+/* eslint-disable import/extensions */
+/* eslint-disable import/no-unresolved */
+/* eslint-disable import/no-extraneous-dependencies */
 /* global fetch:false */
+import cacheService from '../utils/cache';
+import storage from '../utils/storage';
+import { STORAGE_KEY } from '../constants';
 
 export const config = {
-  baseUrl: 'https://reqres.in/api'
+  baseUrl: 'http://34.238.41.114:8080/'
 };
 
 export const STATUS_CODE = {
   OK: 200,
   NOT_FOUND: 404,
-  NO_CONTENT: 204
+  NO_CONTENT: 204,
+  BAD_REQUEST: 400,
+  UNAUTHORIZED: 401
 };
 
+// const fetchData = async (url, params, customHeaders, cachedControll) => {
+//   let headers = {
+//     Accept: 'application/json',
+//     'Content-Type': 'application/json',
+//     ...customHeaders
+//   };
+//   const token = await storage.get(STORAGE_KEY.TOKEN_LOGIN);
+//   if (token) {
+//     if (url === 'http://34.238.41.114:8080/api/users/register') {
+//       headers = {
+//         ...headers
+//       };
+//     } else {
+//       headers = {
+//         ...headers,
+//         Authorization: `Bearer ${token}`
+//       };
+//     }
+//   } else {
+//     headers = {
+//       ...headers
+//     };
+//   }
+
+//   const response = await fetch(url, {
+//     ...params,
+//     headers
+//   });
+//   // for DELETE method case
+//   if (response.status === STATUS_CODE.NO_CONTENT) return {};
+//   const json = await response.json();
+
+//   // for caching response API
+//   if (cachedControll) {
+//     await cacheService.set(cachedControll, json);
+//   }
+//   return json;
+// };
 const fetchData = async (url, params, customHeaders) => {
   const headers = {
     Accept: 'application/json',
@@ -58,6 +106,7 @@ const get = async (endpoint, params = {}, headers = {}) => {
   const fetchParams = {
     method: 'GET'
   };
+  // console.log(headers)
   return fetchData(url, fetchParams, headers);
 };
 
