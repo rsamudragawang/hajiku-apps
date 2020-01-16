@@ -10,9 +10,11 @@ const styles = StyleSheet.create({
     marginTop: scale(30),
     backgroundColor: '#FF6060',
     height: scale(100),
-    width: scale(156)
+    width: scale(156),
+    borderRadius: 10
   },
   cardUmroh: {
+    borderRadius: 10,
     marginLeft: scale(15),
     marginTop: scale(30),
     backgroundColor: '#FFC275',
@@ -20,15 +22,17 @@ const styles = StyleSheet.create({
     width: scale(156)
   },
   cardQuiz: {
+    borderRadius: 10,
     marginLeft: scale(15),
-    marginTop: scale(30),
+    marginTop: scale(40),
     backgroundColor: '#A292FF',
     height: scale(100),
     width: scale(156)
   },
   cardPengaturan: {
+    borderRadius: 10,
     marginLeft: scale(15),
-    marginTop: scale(30),
+    marginTop: scale(40),
     backgroundColor: '#5D7DFF',
     height: scale(100),
     width: scale(156)

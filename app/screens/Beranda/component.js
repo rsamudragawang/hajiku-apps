@@ -6,6 +6,7 @@ import IconHaji from '../../../assets/svgs/IconHaji';
 import IconUmroh from '../../../assets/svgs/IconUmroh';
 import IconQuiz from '../../../assets/svgs/IconQuiz';
 import IconSetting from '../../../assets/svgs/IconSetting';
+import { scale } from '../../utils/scaling';
 
 export default class Component extends React.Component {
   constructor(props) {
@@ -29,7 +30,7 @@ export default class Component extends React.Component {
             </View>
             <View style={{ flexDirection: 'row' }}>
               <View style={styles.cardHaji}>
-                <View style={{ marginTop: 15, marginLeft: 15, marginBottom: 8 }}>
+                <View style={{ marginTop: scale(15), marginLeft: scale(15), marginBottom: scale(8) }}>
                   <IconHaji />
                 </View>
                 <View style={{ marginLeft: 15 }}>
@@ -38,10 +39,10 @@ export default class Component extends React.Component {
                 </View>
               </View>
               <View style={styles.cardUmroh}>
-                <View style={{ marginTop: 15, marginLeft: 15, marginBottom: 8 }}>
+                <View style={{ marginTop: scale(15), marginLeft: scale(15), marginBottom: scale(8) }}>
                   <IconUmroh />
                 </View>
-                <View style={{ marginLeft: 15 }}>
+                <View style={{ marginLeft: scale(15) }}>
                   <Text style={styles.titleCard}>Umroh</Text>
                   <Text style={styles.contentCard}>{`${this.state.jumlahMateri}  Materi`}</Text>
                 </View>
@@ -50,19 +51,19 @@ export default class Component extends React.Component {
           </ImageBackground>
           <View style={{ flexDirection: 'row' }}>
             <View style={styles.cardQuiz}>
-              <View style={{ marginTop: 15, marginLeft: 15, marginBottom: 8 }}>
+              <View style={{ marginTop: scale(15), marginLeft: scale(15), marginBottom: scale(8) }}>
                 <IconQuiz />
               </View>
-              <View style={{ marginLeft: 15 }}>
+              <View style={{ marginLeft: scale(15) }}>
                 <Text style={styles.titleCard}>Quiz</Text>
                 <Text style={styles.contentCard}>{`${this.state.jumlahMateri}  Quiz`}</Text>
               </View>
             </View>
             <View style={styles.cardPengaturan}>
-              <View style={{ marginTop: 15, marginLeft: 15, marginBottom: 8 }}>
+              <View style={{ marginTop: scale(15), marginLeft: scale(15), marginBottom: scale(8) }}>
                 <IconSetting />
               </View>
-              <View style={{ marginLeft: 15 }}>
+              <View style={{ marginLeft: scale(15) }}>
                 <Text style={styles.titleCard}>Pengaturan</Text>
                 <Text style={styles.contentCard}>Lihat Selengkapnya</Text>
               </View>

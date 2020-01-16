@@ -15,12 +15,12 @@ const styles = StyleSheet.create({
     backgroundColor: COLOR_WHITE
   },
   hiasan: {
-    width: 141,
-    height: 203
+    width: scale(141),
+    height: scale(203)
   },
   inputText: {
     margin: scale(15),
-    width: scale(300),
+    width: scale(315),
     height: scale(40),
     borderRadius: scale(5),
     borderColor: '#c4c4c4',

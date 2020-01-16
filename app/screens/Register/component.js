@@ -121,10 +121,10 @@ export default class Component extends React.Component {
           customContainer={{
             backgroundColor: '#FF5151',
             borderRadius: 5,
-            width: scale(300),
-            height: 50,
-            marginBottom: 10,
-            marginLeft: 15
+            width: scale(315),
+            height: scale(50),
+            marginBottom: scale(10),
+            marginLeft: scale(15)
           }}
           customText={{ color: '#fff', letterSpacing: 300 }}
         />

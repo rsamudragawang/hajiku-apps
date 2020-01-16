@@ -93,7 +93,7 @@ export default class Component extends React.Component {
           customContainer={{
             backgroundColor: '#FF5151',
             borderRadius: 5,
-            width: scale(300),
+            width: scale(315),
             height: 50,
             marginBottom: 10,
             marginLeft: 15
