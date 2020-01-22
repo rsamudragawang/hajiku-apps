@@ -4,7 +4,7 @@ import { COLOR_WHITE, FONT_HEADLINE6_PRIMARY, COLOR_BASE_PRIMARY_MAIN } from '..
 export default StyleSheet.create({
   container: {
     flexDirection: 'row',
-    backgroundColor: COLOR_BASE_PRIMARY_MAIN,
+    backgroundColor: COLOR_WHITE,
     height: Platform.OS === 'ios' ? 44 : 56
   },
   centerContainer: {

@@ -8,6 +8,7 @@ import OnBoarding from '../screens/OnBoarding';
 import Login from '../screens/Login';
 import Register from '../screens/Register';
 import Beranda from '../screens/Beranda';
+import Materi from '../screens/Materi';
 
 export const HomeStack = StackNavigator(
   {
@@ -96,6 +97,12 @@ export const OnBoardingStack = StackNavigator(
 
 export const BerandaStack = StackNavigator(
   {
+    Materi: {
+      screen: Materi,
+      navigationOptions: {
+        tabBarVisible: false
+      }
+    },
     Beranda: {
       screen: Beranda,
       navigationOptions: {

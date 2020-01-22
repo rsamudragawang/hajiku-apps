@@ -32,21 +32,16 @@ export default class Component extends React.Component {
       Alert.alert('Isi SEMUA WOI!');
     } else {
       try {
-        console.log(params);
         const result = await ENDPOINT.login(params);
-        console.log(result);
 
         if (result.code === 200) {
-          console.log('bener');
           Alert.alert(JSON.stringify(result.code), 'Succses');
           this.props.navigation.navigate('Beranda');
         } else {
-          ToastAndroid.show('Failed to Register', ToastAndroid.SHORT);
-          console.log('salah');
+          ToastAndroid.show('Failed to Login', ToastAndroid.SHORT);
         }
       } catch (error) {
         ToastAndroid.show('error.networkError', ToastAndroid.SHORT);
-        console.log(error);
       }
     }
   };
