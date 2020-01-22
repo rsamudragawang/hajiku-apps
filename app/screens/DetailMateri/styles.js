@@ -20,6 +20,12 @@ const styles = StyleSheet.create({
     fontSize: 20,
     fontWeight: 'bold',
     color: '#FFF'
+  },
+  toolbar: {
+    marginTop: 30,
+    backgroundColor: 'white',
+    padding: 10,
+    borderRadius: 5
   }
 });
 
