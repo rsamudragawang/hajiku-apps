@@ -3,11 +3,14 @@
 /* eslint-disable react-native/no-color-literals */
 /* eslint-disable react/sort-comp */
 import React from 'react';
-import { View, Text, Image, ScrollView } from 'react-native';
+import { View, Text, Image, ScrollView, TouchableOpacity } from 'react-native';
 import Video from 'react-native-video';
 import MediaControls, { PLAYER_STATES } from 'react-native-media-controls';
 import Header from '../../components/elements/Header';
 import styles from './styles';
+// import Right from '../../../assets/svgs/Right';
+import { scale } from '../../utils/scaling';
+import Bottom from '../../../assets/svgs/Bottom';
 
 export default class Component extends React.Component {
   videoPlayer;
@@ -69,7 +72,7 @@ export default class Component extends React.Component {
           <Text style={{ fontStyle: 'normal', fontWeight: 'bold', fontSize: 32, marginLeft: 15 }}>Haji</Text>
           <Image
             resizeMode="cover"
-            style={{ width: 328, height: 180, marginLeft: 15, marginTop: 15 }}
+            style={{ width: scale(328), height: scale(180), marginLeft: 15, marginTop: 15 }}
             source={{ uri: 'https://i.ibb.co/TBLJWhk/haji.jpg' }}
           />
           <Text
@@ -93,9 +96,14 @@ export default class Component extends React.Component {
               >
                 Video
               </Text>
-              <View style={{ width: 328, height: 180, marginLeft: 15, marginTop: 15 }}>
+              <View style={{ width: scale(328), height: scale(180), marginLeft: 15, marginTop: 15 }}>
                 <Video
-                  style={{ position: 'absolute', backgroundColor: '#000', width: 328, height: 180 }}
+                  style={{
+                    position: 'absolute',
+                    backgroundColor: '#000',
+                    width: scale(328),
+                    height: scale(180)
+                  }}
                   onEnd={this.onEnd}
                   onLoad={this.onLoad}
                   onLoadStart={this.onLoadStart}
@@ -127,8 +135,28 @@ export default class Component extends React.Component {
               </View>
             </View>
           ) : null}
-          <View style={{ flexDirection: 'row' }}>
-            <Text>test</Text>
+          <View
+            style={{
+              marginTop: scale(24),
+              marginLeft: scale(15),
+              marginRight: scale(15),
+              marginBottom: scale(15)
+            }}
+          >
+            <TouchableOpacity style={styles.collapseProduct}>
+              <View style={styles.viewNumberList}>
+                <Text style={styles.listProductNomor}>1</Text>
+              </View>
+              <View style={styles.viewTxtList}>
+                <Text style={styles.listProduct}>Test</Text>
+                <Text style={styles.listProduct}>Test</Text>
+              </View>
+              <View style={styles.viewRight}>
+                <TouchableOpacity>
+                  <Bottom />
+                </TouchableOpacity>
+              </View>
+            </TouchableOpacity>
           </View>
         </ScrollView>
       </View>

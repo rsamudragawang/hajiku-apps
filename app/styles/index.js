@@ -57,6 +57,7 @@ const FONT_SIZE_BODY2 = 14;
 const FONT_SIZE_BUTTON = 14;
 const FONT_SIZE_CAPTION = 12;
 const FONT_SIZE_OVERLINE = 10;
+const FONT_SIZE_NORMAL = 18;
 
 export const FONT_HEADLINE1_PRIMARY = {
   fontFamily: FONT_PRIMARY_LIGHT,
@@ -186,4 +187,12 @@ export const FONT_OVERLINE_PRIMARY = {
 export const FONT_OVERLINE_SECONDARY = {
   fontFamily: FONT_SECONDARY_REGULAR,
   fontSize: FONT_SIZE_OVERLINE
+};
+export const FONT_NORMAL_PRIMARY = {
+  fontFamily: FONT_PRIMARY_REGULAR,
+  fontSize: FONT_SIZE_NORMAL
+};
+export const FONT_NORMAL_NOMOR = {
+  fontFamily: FONT_PRIMARY_REGULAR,
+  fontSize: FONT_SIZE_HEADLINE5
 };
