@@ -157,6 +157,14 @@ export default class Component extends React.Component {
                 </TouchableOpacity>
               </View>
             </TouchableOpacity>
+            <View style={styles.viewDesc}>
+              <Text style={{ textAlign: 'justify', lineHeight: 27, margin: 16 }}>
+                tawaf ifadah, adalah mengelilingi Ka’bah sebanyak 7 kali dengan syarat sebagai berikut : 1.
+                Suci dari hadas dan najis baik badan maupun pakaian. 2. Menutup aurat. 3. Ka’bah berada di
+                sebelah kiri orang yang mengelilinginya. 4. Memulai tawaf dari arah hajar aswad (batu hitam)
+                yang terletak di salah satu pojok di luar Ka’bah.
+              </Text>
+            </View>
           </View>
         </ScrollView>
       </View>

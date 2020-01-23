@@ -2,7 +2,7 @@
 import { StyleSheet } from 'react-native';
 import { COLOR_WHITE, FONT_NORMAL_PRIMARY, FONT_NORMAL_NOMOR } from '../../styles';
 import { scale } from '../../utils/scaling';
-import { gray, blue } from '../../styles/colors';
+import { gray } from '../../styles/colors';
 
 const styles = StyleSheet.create({
   container: {
@@ -23,12 +23,20 @@ const styles = StyleSheet.create({
     color: '#FFF'
   },
   collapseProduct: {
-    marginBottom: scale(15),
     flexDirection: 'row',
     borderColor: gray.gray_low,
     borderWidth: 1,
     borderRadius: 5,
     height: scale(70)
+  },
+  viewDesc: {
+    marginBottom: scale(15),
+    flexDirection: 'row',
+    borderColor: gray.gray_low,
+    borderWidth: 1,
+    borderRadius: 5,
+    alignSelf: 'baseline',
+    borderTopWidth: 0
   },
   viewTxtList: {
     flex: 4,
@@ -39,7 +47,7 @@ const styles = StyleSheet.create({
     flex: 1,
     margin: scale(15),
     justifyContent: 'center',
-    backgroundColor: blue.blue_40
+    backgroundColor: '#738FFF'
   },
   listProduct: {
     ...FONT_NORMAL_PRIMARY,
