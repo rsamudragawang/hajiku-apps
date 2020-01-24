@@ -98,19 +98,19 @@ export const OnBoardingStack = StackNavigator(
 
 export const BerandaStack = StackNavigator(
   {
-    
-    Beranda: {
-      screen: Beranda,
-      navigationOptions: {
-        tabBarVisible: false
-      }
-    },
     DetailMateri: {
       screen: DetailMateri,
       navigationOptions: {
         tabBarVisible: false
       }
     },
+    Beranda: {
+      screen: Beranda,
+      navigationOptions: {
+        tabBarVisible: false
+      }
+    },
+    
     Materi: {
       screen: Materi,
       navigationOptions: {

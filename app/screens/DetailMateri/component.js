@@ -6,6 +6,7 @@ import React from 'react';
 import { View, Text, Image, ScrollView, TouchableOpacity } from 'react-native';
 import Video from 'react-native-video';
 import MediaControls, { PLAYER_STATES } from 'react-native-media-controls';
+import YouTube from 'react-native-youtube';
 import Header from '../../components/elements/Header';
 import styles from './styles';
 // import Right from '../../../assets/svgs/Right';
@@ -29,7 +30,10 @@ export default class Component extends React.Component {
       desc: '',
       imageLink: '',
       videoLink: '',
-      subMateri: []
+      subMateri: [],
+      isReady: false,
+      status: '',
+      quality: ''
     };
   }
   componentWillMount() {
@@ -129,40 +133,17 @@ export default class Component extends React.Component {
                 Video
               </Text>
               <View style={{ width: scale(328), height: scale(180), marginLeft: 15, marginTop: 15 }}>
-                <Video
-                  style={{
-                    position: 'absolute',
-                    backgroundColor: '#000',
-                    width: scale(328),
-                    height: scale(180)
-                  }}
-                  onEnd={this.onEnd}
-                  onLoad={this.onLoad}
-                  onLoadStart={this.onLoadStart}
-                  onProgress={this.onProgress}
-                  paused={this.state.paused}
-                  ref={videoPlayer => (this.videoPlayer = videoPlayer)}
-                  resizeMode="cover"
-                  source={{ uri: this.state.videoLink }}
-                  volume={50.0}
-                  bufferConfig={{
-                    minBufferMs: 15000,
-                    maxBufferMs: 50000,
-                    bufferForPlaybackMs: 2500,
-                    bufferForPlaybackAfterRebufferMs: 5000
-                  }}
-                />
-                <MediaControls
-                  duration={this.state.duration}
-                  isLoading={this.state.isLoading}
-                  mainColor="red"
-                  onFullScreen={this.onFullScreen}
-                  onPaused={this.onPaused}
-                  onReplay={this.onReplay}
-                  onSeek={this.onSeek}
-                  onSeeking={this.onSeeking}
-                  playerState={this.state.playerState}
-                  progress={this.state.currentTime}
+                <YouTube
+                  apiKey="AIzaSyAuIuXHM8REnj7bkRxhZuu96O4wXvNDLB8"
+                  videoId={this.state.videoLink} // The YouTube video ID
+                  play // control playback of video with true/false
+                  // fullscreen // control whether the video should play in fullscreen or inline
+                  loop // control whether the video should loop when ended
+                  onReady={() => this.setState({ isReady: true })}
+                  onChangeState={e => this.setState({ status: e.state })}
+                  onChangeQuality={e => this.setState({ quality: e.quality })}
+                  onError={e => this.setState({ error: e.error })}
+                  style={{ width: scale(328), height: scale(180) }}
                 />
               </View>
             </View>
