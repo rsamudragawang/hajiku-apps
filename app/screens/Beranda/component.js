@@ -1,5 +1,6 @@
 import React from 'react';
-import { View, ImageBackground, Text, ScrollView } from 'react-native';
+import { View, ImageBackground, Text, ScrollView, TouchableOpacity } from 'react-native';
+import PropTypes from 'prop-types';
 import styles from './styles';
 import IMAGES from '../../configs/images';
 import IconHaji from '../../../assets/svgs/IconHaji';
@@ -18,6 +19,9 @@ export default class Component extends React.Component {
     // this._showPass = this._showPass.bind(this);
   }
   _onPress = () => {};
+  _toListMateri = type => {
+    this.props.navigation.navigate('Materi', { type });
+  };
 
   render() {
     return (
@@ -29,24 +33,28 @@ export default class Component extends React.Component {
               <Text style={styles.textName}>Pak Haji</Text>
             </View>
             <View style={{ flexDirection: 'row' }}>
-              <View style={styles.cardHaji}>
-                <View style={{ marginTop: scale(15), marginLeft: scale(15), marginBottom: scale(8) }}>
-                  <IconHaji />
+              <TouchableOpacity onPress={() => this._toListMateri('haji')}>
+                <View style={styles.cardHaji}>
+                  <View style={{ marginTop: scale(15), marginLeft: scale(15), marginBottom: scale(8) }}>
+                    <IconHaji />
+                  </View>
+                  <View style={{ marginLeft: 15 }}>
+                    <Text style={styles.titleCard}>Haji</Text>
+                    <Text style={styles.contentCard}>{`${this.state.jumlahMateri}  Materi`}</Text>
+                  </View>
                 </View>
-                <View style={{ marginLeft: 15 }}>
-                  <Text style={styles.titleCard}>Haji</Text>
-                  <Text style={styles.contentCard}>{`${this.state.jumlahMateri}  Materi`}</Text>
+              </TouchableOpacity>
+              <TouchableOpacity onPress={() => this._toListMateri('umrah')}>
+                <View style={styles.cardUmroh}>
+                  <View style={{ marginTop: scale(15), marginLeft: scale(15), marginBottom: scale(8) }}>
+                    <IconUmroh />
+                  </View>
+                  <View style={{ marginLeft: scale(15) }}>
+                    <Text style={styles.titleCard}>Umroh</Text>
+                    <Text style={styles.contentCard}>{`${this.state.jumlahMateri}  Materi`}</Text>
+                  </View>
                 </View>
-              </View>
-              <View style={styles.cardUmroh}>
-                <View style={{ marginTop: scale(15), marginLeft: scale(15), marginBottom: scale(8) }}>
-                  <IconUmroh />
-                </View>
-                <View style={{ marginLeft: scale(15) }}>
-                  <Text style={styles.titleCard}>Umroh</Text>
-                  <Text style={styles.contentCard}>{`${this.state.jumlahMateri}  Materi`}</Text>
-                </View>
-              </View>
+              </TouchableOpacity>
             </View>
           </ImageBackground>
           <View style={{ flexDirection: 'row' }}>
@@ -110,3 +118,7 @@ export default class Component extends React.Component {
     );
   }
 }
+
+Component.propTypes = {
+  navigation: PropTypes.object.isRequired
+};

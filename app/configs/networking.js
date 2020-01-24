@@ -20,58 +20,29 @@ export const STATUS_CODE = {
   UNAUTHORIZED: 401
 };
 
-// const fetchData = async (url, params, customHeaders, cachedControll) => {
-//   let headers = {
-//     Accept: 'application/json',
-//     'Content-Type': 'application/json',
-//     ...customHeaders
-//   };
-//   const token = await storage.get(STORAGE_KEY.TOKEN_LOGIN);
-//   if (token) {
-//     if (url === 'http://34.238.41.114:8080/api/users/register') {
-//       headers = {
-//         ...headers
-//       };
-//     } else {
-//       headers = {
-//         ...headers,
-//         Authorization: `Bearer ${token}`
-//       };
-//     }
-//   } else {
-//     headers = {
-//       ...headers
-//     };
-//   }
-
-//   const response = await fetch(url, {
-//     ...params,
-//     headers
-//   });
-//   // for DELETE method case
-//   if (response.status === STATUS_CODE.NO_CONTENT) return {};
-//   const json = await response.json();
-
-//   // for caching response API
-//   if (cachedControll) {
-//     await cacheService.set(cachedControll, json);
-//   }
-//   return json;
-// };
-const fetchData = async (url, params, customHeaders) => {
-  const headers = {
+const fetchData = async (url, params, customHeaders, cachedControll) => {
+  let headers = {
     Accept: 'application/json',
     'Content-Type': 'application/json',
     ...customHeaders
   };
-
-  // const tokens = await tokenService.get();
-  // if (tokens) {
-  //   headers = {
-  //     ...headers,
-  //     Authorization: `Bearer ${tokens.accessToken}`
-  //   };
-  // }
+  const token = await storage.get(STORAGE_KEY.TOKEN_LOGIN);
+  if (token) {
+    if (url === 'http://34.238.41.114:8080/api/users/register') {
+      headers = {
+        ...headers
+      };
+    } else {
+      headers = {
+        ...headers,
+        Authorization: `Bearer ${token}`
+      };
+    }
+  } else {
+    headers = {
+      ...headers
+    };
+  }
 
   const response = await fetch(url, {
     ...params,
@@ -80,20 +51,55 @@ const fetchData = async (url, params, customHeaders) => {
   // for DELETE method case
   if (response.status === STATUS_CODE.NO_CONTENT) return {};
   const json = await response.json();
-  // if (!response.ok) {
-  //   if (json && json.message) {
-  //     if (json.data) {
-  //       const error = new Error(json.message);
-  //       error.code = json.data.errorCode;
-  //       throw error;
-  //     } else {
-  //       throw new Error(json.message);
-  //     }
-  //   }
-  //   throw new Error('unknownError');
-  // }
+
+  // for caching response API
+  if (cachedControll) {
+    await cacheService.set(cachedControll, json);
+  }
   return json;
 };
+// const fetchData = async (url, params, customHeaders) => {
+//   let headers = {
+//     Accept: 'application/json',
+//     'Content-Type': 'application/json',
+//     ...customHeaders
+//   };
+
+//   // const tokens = await tokenService.get();
+//   // if (tokens) {
+//   //   headers = {
+//   //     ...headers,
+//   //     Authorization: `Bearer ${tokens.accessToken}`
+//   //   };
+//   // }
+//   if (url.slice(0, 43) === 'http://34.238.41.114:8080/api/haji/all?data=') {
+//     headers = {
+//       ...headers,
+//       Authorization:
+//         'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI1ZTFlYjdiZjliNzBiYzIxZWU4MDlmZTkiLCJpYXQiOjE1Nzk3NTMyOTB9.0wjFaxcmQeTztjgGOLWme99lttgvzAwav6famOLt5Pw'
+//     };
+//   }
+//   const response = await fetch(url, {
+//     ...params,
+//     headers
+//   });
+//   // for DELETE method case
+//   if (response.status === STATUS_CODE.NO_CONTENT) return {};
+//   const json = await response.json();
+//   // if (!response.ok) {
+//   //   if (json && json.message) {
+//   //     if (json.data) {
+//   //       const error = new Error(json.message);
+//   //       error.code = json.data.errorCode;
+//   //       throw error;
+//   //     } else {
+//   //       throw new Error(json.message);
+//   //     }
+//   //   }
+//   //   throw new Error('unknownError');
+//   // }
+//   return json;
+// };
 
 const get = async (endpoint, params = {}, headers = {}) => {
   let queryString = Object.keys(params)
