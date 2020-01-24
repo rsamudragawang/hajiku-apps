@@ -53,6 +53,11 @@ const styles = StyleSheet.create({
     ...FONT_NORMAL_PRIMARY,
     color: gray.gray_dark
   },
+  listProductTitle: {
+    ...FONT_NORMAL_PRIMARY,
+    color: gray.gray_dark,
+    fontWeight: 'bold'
+  },
   listProductNomor: {
     ...FONT_NORMAL_NOMOR,
     color: COLOR_WHITE,

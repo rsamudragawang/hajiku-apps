@@ -24,6 +24,9 @@ export default class Component extends React.Component {
     this.setState({ data: result.data, type: getType });
   };
   _onPress = () => {};
+  _toDetail = index => {
+    this.props.navigation.navigate('DetailMateri', { index, type: this.state.type });
+  };
 
   render() {
     return (
@@ -45,7 +48,7 @@ export default class Component extends React.Component {
           </Text>
           {this.state.data.map((data, index) => (
             <View key={index}>
-              <TouchableOpacity>
+              <TouchableOpacity onPress={() => this._toDetail(data._id)}>
                 <View style={styles.containerDiscover}>
                   <ImageBackground source={{ uri: data.imageLink }} style={styles.imageDiscover}>
                     <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>

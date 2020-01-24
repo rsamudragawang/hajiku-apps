@@ -11,6 +11,7 @@ import styles from './styles';
 // import Right from '../../../assets/svgs/Right';
 import { scale } from '../../utils/scaling';
 import Bottom from '../../../assets/svgs/Bottom';
+import { ENDPOINT } from '../../configs';
 
 export default class Component extends React.Component {
   videoPlayer;
@@ -23,10 +24,35 @@ export default class Component extends React.Component {
       isLoading: true,
       paused: false,
       playerState: PLAYER_STATES.PLAYING,
-      video: true
+      video: true,
+      title: '',
+      desc: '',
+      imageLink: '',
+      videoLink: '',
+      subMateri: []
     };
   }
-
+  componentWillMount() {
+    this._getparams();
+  }
+  _getparams = async () => {
+    const { params } = this.props.navigation.state;
+    const getType = params ? params.type : 'umroh';
+    const getindex = params ? params.index : 'umroh';
+    const result = await ENDPOINT.getById(getindex, getType);
+    this.setState({
+      title: result.data.title,
+      desc: result.data.description,
+      imageLink: result.data.imageLink,
+      videoLink: result.data.videoLink,
+      subMateri: result.data.subMateri
+    });
+    console.log(result);
+  };
+  _onPress = () => {};
+  _toDetail = index => {
+    this.props.navigation.navigate('DetailMateri', { index, type: this.state.type });
+  };
   onSeek = seek => {
     this.videoPlayer.seek(seek);
   };
@@ -69,21 +95,27 @@ export default class Component extends React.Component {
       <View style={styles.container}>
         <Header />
         <ScrollView>
-          <Text style={{ fontStyle: 'normal', fontWeight: 'bold', fontSize: 32, marginLeft: 15 }}>Haji</Text>
+          <Text style={{ fontStyle: 'normal', fontWeight: 'bold', fontSize: 32, marginLeft: 15 }}>
+            {this.state.title}
+          </Text>
           <Image
             resizeMode="cover"
             style={{ width: scale(328), height: scale(180), marginLeft: 15, marginTop: 15 }}
-            source={{ uri: 'https://i.ibb.co/TBLJWhk/haji.jpg' }}
+            source={{ uri: this.state.imageLink }}
           />
           <Text
-            style={{ textAlign: 'justify', marginLeft: 15, marginTop: 24, fontWeight: '300', fontSize: 12 }}
+            style={{
+              lineHeight: 25,
+              textAlign: 'justify',
+              marginLeft: 15,
+              marginTop: 24,
+              fontWeight: '300',
+              fontSize: 12
+            }}
           >
-            Menurut bahasa (etimologi) Haji adalah pergi ke Baitullah (Kakbah) untuk melaksanakan ibadah yang
-            telah ditetapkan atau ditentukan Allah swt. Secara istilah (terminologi) adalah pergi beribadah ke
-            tanah suci (Mekah), melakukan tawaf, sa’i, dan wukuf di Padang Arafah serta melaksanakan semua
-            ketentuan-ketentuan haji di bulan Zulhijah.
+            {this.state.desc}
           </Text>
-          {this.state.video ? (
+          {this.state.videoLink.length > 0 ? (
             <View>
               <Text
                 style={{
@@ -111,7 +143,7 @@ export default class Component extends React.Component {
                   paused={this.state.paused}
                   ref={videoPlayer => (this.videoPlayer = videoPlayer)}
                   resizeMode="cover"
-                  source={{ uri: 'https://clips.vorwaerts-gmbh.de/big_buck_bunny.mp4' }}
+                  source={{ uri: this.state.videoLink }}
                   volume={50.0}
                   bufferConfig={{
                     minBufferMs: 15000,
@@ -135,37 +167,39 @@ export default class Component extends React.Component {
               </View>
             </View>
           ) : null}
-          <View
-            style={{
-              marginTop: scale(24),
-              marginLeft: scale(15),
-              marginRight: scale(15),
-              marginBottom: scale(15)
-            }}
-          >
-            <TouchableOpacity style={styles.collapseProduct}>
-              <View style={styles.viewNumberList}>
-                <Text style={styles.listProductNomor}>1</Text>
+          {this.state.subMateri.length > 0 ? (
+            <View
+              style={{
+                marginTop: scale(24),
+                marginLeft: scale(15),
+                marginRight: scale(15),
+                marginBottom: scale(15)
+              }}
+            >
+              <TouchableOpacity style={styles.collapseProduct}>
+                <View style={styles.viewNumberList}>
+                  <Text style={styles.listProductNomor}>1</Text>
+                </View>
+                <View style={styles.viewTxtList}>
+                  <Text style={styles.listProductTitle}>Test</Text>
+                  <Text style={styles.listProduct}>Test</Text>
+                </View>
+                <View style={styles.viewRight}>
+                  <TouchableOpacity>
+                    <Bottom />
+                  </TouchableOpacity>
+                </View>
+              </TouchableOpacity>
+              <View style={styles.viewDesc}>
+                <Text style={{ textAlign: 'justify', lineHeight: 27, margin: 16 }}>
+                  tawaf ifadah, adalah mengelilingi Ka’bah sebanyak 7 kali dengan syarat sebagai berikut : 1.
+                  Suci dari hadas dan najis baik badan maupun pakaian. 2. Menutup aurat. 3. Ka’bah berada di
+                  sebelah kiri orang yang mengelilinginya. 4. Memulai tawaf dari arah hajar aswad (batu hitam)
+                  yang terletak di salah satu pojok di luar Ka’bah.
+                </Text>
               </View>
-              <View style={styles.viewTxtList}>
-                <Text style={styles.listProduct}>Test</Text>
-                <Text style={styles.listProduct}>Test</Text>
-              </View>
-              <View style={styles.viewRight}>
-                <TouchableOpacity>
-                  <Bottom />
-                </TouchableOpacity>
-              </View>
-            </TouchableOpacity>
-            <View style={styles.viewDesc}>
-              <Text style={{ textAlign: 'justify', lineHeight: 27, margin: 16 }}>
-                tawaf ifadah, adalah mengelilingi Ka’bah sebanyak 7 kali dengan syarat sebagai berikut : 1.
-                Suci dari hadas dan najis baik badan maupun pakaian. 2. Menutup aurat. 3. Ka’bah berada di
-                sebelah kiri orang yang mengelilinginya. 4. Memulai tawaf dari arah hajar aswad (batu hitam)
-                yang terletak di salah satu pojok di luar Ka’bah.
-              </Text>
             </View>
-          </View>
+          ) : null}
         </ScrollView>
       </View>
     );
