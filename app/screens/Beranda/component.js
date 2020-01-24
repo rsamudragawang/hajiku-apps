@@ -8,16 +8,28 @@ import IconUmroh from '../../../assets/svgs/IconUmroh';
 import IconQuiz from '../../../assets/svgs/IconQuiz';
 import IconSetting from '../../../assets/svgs/IconSetting';
 import { scale } from '../../utils/scaling';
+import { ENDPOINT } from '../../configs';
 
 export default class Component extends React.Component {
   constructor(props) {
     super(props);
     // this.handleBackButtonClick = this.handleBackButtonClick.bind(this);
     this.state = {
-      jumlahMateri: 8
+      jumlahMateri: 8,
+      data: []
     };
     // this._showPass = this._showPass.bind(this);
   }
+  componentWillMount() {
+    this._getData();
+  }
+  _toDetail = index => {
+    this.props.navigation.navigate('DetailMateri', { index, type: this.state.type });
+  };
+  _getData = async () => {
+    const result = await ENDPOINT.getAll('discover');
+    this.setState({ data: result.data });
+  };
   _onPress = () => {};
   _toListMateri = type => {
     this.props.navigation.navigate('Materi', { type });
@@ -78,41 +90,19 @@ export default class Component extends React.Component {
             </View>
           </View>
           <Text style={styles.discover}>Discover Quizqoeh</Text>
-          <View style={styles.containerDiscover}>
-            <ImageBackground source={IMAGES.haji} style={styles.imageDiscover}>
-              <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-                <Text style={styles.textCard}>HAJI</Text>
-              </View>
-            </ImageBackground>
-          </View>
-          <View style={styles.containerDiscover}>
-            <ImageBackground source={IMAGES.haji} style={styles.imageDiscover}>
-              <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-                <Text style={styles.textCard}>HAJI</Text>
-              </View>
-            </ImageBackground>
-          </View>
-          <View style={styles.containerDiscover}>
-            <ImageBackground source={IMAGES.haji} style={styles.imageDiscover}>
-              <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-                <Text style={styles.textCard}>HAJI</Text>
-              </View>
-            </ImageBackground>
-          </View>
-          <View style={styles.containerDiscover}>
-            <ImageBackground source={IMAGES.haji} style={styles.imageDiscover}>
-              <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-                <Text style={styles.textCard}>HAJI</Text>
-              </View>
-            </ImageBackground>
-          </View>
-          <View style={styles.containerDiscover}>
-            <ImageBackground source={IMAGES.haji} style={styles.imageDiscover}>
-              <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-                <Text style={styles.textCard}>HAJI</Text>
-              </View>
-            </ImageBackground>
-          </View>
+          {this.state.data.map((data, index) => (
+            <View key={index}>
+              <TouchableOpacity onPress={() => this._toDetail(data._id)}>
+                <View style={styles.containerDiscover}>
+                  <ImageBackground source={{ uri: data.imageLink }} style={styles.imageDiscover}>
+                    <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
+                      <Text style={styles.textCard}>{data.title}</Text>
+                    </View>
+                  </ImageBackground>
+                </View>
+              </TouchableOpacity>
+            </View>
+          ))}
         </ScrollView>
       </View>
     );
