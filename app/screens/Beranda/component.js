@@ -23,8 +23,8 @@ export default class Component extends React.Component {
   componentWillMount() {
     this._getData();
   }
-  _toDetail = index => {
-    this.props.navigation.navigate('DetailMateri', { index, type: this.state.type });
+  _toDetail = (index, type) => {
+    this.props.navigation.navigate('DetailMateri', { index, type });
   };
   _getData = async () => {
     const result = await ENDPOINT.getAll('discover');
@@ -92,7 +92,7 @@ export default class Component extends React.Component {
           <Text style={styles.discover}>Discover Quizqoeh</Text>
           {this.state.data.map((data, index) => (
             <View key={index}>
-              <TouchableOpacity onPress={() => this._toDetail(data._id)}>
+              <TouchableOpacity onPress={() => this._toDetail(data._id, data.tag)}>
                 <View style={styles.containerDiscover}>
                   <ImageBackground source={{ uri: data.imageLink }} style={styles.imageDiscover}>
                     <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>

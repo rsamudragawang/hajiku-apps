@@ -4,12 +4,10 @@
 /* eslint-disable react/sort-comp */
 import React from 'react';
 import { View, Text, Image, ScrollView, TouchableOpacity } from 'react-native';
-import Video from 'react-native-video';
-import MediaControls, { PLAYER_STATES } from 'react-native-media-controls';
 import YouTube from 'react-native-youtube';
 import Header from '../../components/elements/Header';
 import styles from './styles';
-// import Right from '../../../assets/svgs/Right';
+import Right from '../../../assets/svgs/Right';
 import { scale } from '../../utils/scaling';
 import Bottom from '../../../assets/svgs/Bottom';
 import { ENDPOINT } from '../../configs';
@@ -24,16 +22,16 @@ export default class Component extends React.Component {
       isFullScreen: false,
       isLoading: true,
       paused: false,
-      playerState: PLAYER_STATES.PLAYING,
       video: true,
       title: '',
       desc: '',
-      imageLink: '',
+      imageLink: 'https://miro.medium.com/max/328/1*R91n_x759FWmHFhIxET9yA.png',
       videoLink: '',
       subMateri: [],
       isReady: false,
       status: '',
-      quality: ''
+      quality: '',
+      index: ''
     };
   }
   componentWillMount() {
@@ -44,14 +42,18 @@ export default class Component extends React.Component {
     const getType = params ? params.type : 'umroh';
     const getindex = params ? params.index : 'umroh';
     const result = await ENDPOINT.getById(getindex, getType);
+    const replacelink = result.data.videoLink.slice(32, 43);
+    console.log(replacelink);
     this.setState({
       title: result.data.title,
       desc: result.data.description,
       imageLink: result.data.imageLink,
-      videoLink: result.data.videoLink,
+      videoLink: replacelink,
       subMateri: result.data.subMateri
     });
-    console.log(result);
+  };
+  _showMateri = indexx => {
+    this.setState({ index: indexx });
   };
   _onPress = () => {};
   _toDetail = index => {
@@ -68,24 +70,9 @@ export default class Component extends React.Component {
     });
   };
 
-  onReplay = () => {
-    this.setState({ playerState: PLAYER_STATES.PLAYING });
-    this.videoPlayer.seek(0);
-  };
-
-  onProgress = data => {
-    const { isLoading, playerState } = this.state;
-    // Video Player will continue progress even if the video already ended
-    if (!isLoading && playerState !== PLAYER_STATES.ENDED) {
-      this.setState({ currentTime: data.currentTime });
-    }
-  };
-
   onLoad = data => this.setState({ duration: data.duration, isLoading: false });
 
   onLoadStart = () => this.setState({ isLoading: true });
-
-  onEnd = () => this.setState({ playerState: PLAYER_STATES.ENDED });
 
   exitFullScreen = () => {};
 
@@ -157,7 +144,38 @@ export default class Component extends React.Component {
                 marginBottom: scale(15)
               }}
             >
-              <TouchableOpacity style={styles.collapseProduct}>
+              {this.state.subMateri.map((materi, index) => (
+                <View key={index}>
+                  <TouchableOpacity style={styles.collapseProduct} onPress={() => this._showMateri(index)}>
+                    <View style={styles.viewNumberList}>
+                      <Text style={styles.listProductNomor}>{materi.id}</Text>
+                    </View>
+                    <View style={styles.viewTxtList}>
+                      <Text style={styles.listProductTitle}>{materi.title}</Text>
+                      <Text style={styles.listProduct}>{this.state.title}</Text>
+                    </View>
+                    <View style={styles.viewRight}>
+                      {this.state.index === index ? (
+                        <TouchableOpacity>
+                          <Right />
+                        </TouchableOpacity>
+                      ) : (
+                        <TouchableOpacity>
+                          <Bottom />
+                        </TouchableOpacity>
+                      )}
+                    </View>
+                  </TouchableOpacity>
+                  {this.state.index === index ? (
+                    <View style={styles.viewDesc}>
+                      <Text style={{ textAlign: 'justify', lineHeight: 27, margin: 16 }}>
+                        {materi.description}
+                      </Text>
+                    </View>
+                  ) : null}
+                </View>
+              ))}
+              {/* <TouchableOpacity style={styles.collapseProduct}>
                 <View style={styles.viewNumberList}>
                   <Text style={styles.listProductNomor}>1</Text>
                 </View>
@@ -170,15 +188,7 @@ export default class Component extends React.Component {
                     <Bottom />
                   </TouchableOpacity>
                 </View>
-              </TouchableOpacity>
-              <View style={styles.viewDesc}>
-                <Text style={{ textAlign: 'justify', lineHeight: 27, margin: 16 }}>
-                  tawaf ifadah, adalah mengelilingi Ka’bah sebanyak 7 kali dengan syarat sebagai berikut : 1.
-                  Suci dari hadas dan najis baik badan maupun pakaian. 2. Menutup aurat. 3. Ka’bah berada di
-                  sebelah kiri orang yang mengelilinginya. 4. Memulai tawaf dari arah hajar aswad (batu hitam)
-                  yang terletak di salah satu pojok di luar Ka’bah.
-                </Text>
-              </View>
+              </TouchableOpacity> */}
             </View>
           ) : null}
         </ScrollView>

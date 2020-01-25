@@ -27,7 +27,8 @@ const styles = StyleSheet.create({
     borderColor: gray.gray_low,
     borderWidth: 1,
     borderRadius: 5,
-    height: scale(70)
+    height: scale(70),
+    marginBottom: scale(15)
   },
   viewDesc: {
     marginBottom: scale(15),
@@ -45,7 +46,7 @@ const styles = StyleSheet.create({
   },
   viewNumberList: {
     flex: 1,
-    margin: scale(15),
+    margin: scale(10),
     justifyContent: 'center',
     backgroundColor: '#738FFF'
   },

@@ -9,6 +9,6 @@ export default SwitchNavigator(
     App: Drawer
   },
   {
-    initialRouteName: 'Beranda'
+    initialRouteName: 'OnBoarding'
   }
 );
