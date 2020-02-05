@@ -8,7 +8,8 @@ export const endpoint = {
   register: async params => post('api/users/register', params),
   getAll: async id => get(`api/haji/all?data=${id}`),
   getById: async (id, type) => get(`api/haji/?id=${id}&data=${type}`),
-  quizAll: async () => get('api/quiz/all')
+  quizAll: async () => get('api/quiz/all'),
+  quizById: async id => get(`api/quiz/?id=${id}`)
 };
 
 export default { endpoint };

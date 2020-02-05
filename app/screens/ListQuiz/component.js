@@ -28,7 +28,7 @@ export default class Component extends React.Component {
   };
   _onPress = () => {};
   _toDetail = index => {
-    this.props.navigation.navigate('DetailMateri', { index, type: this.state.type });
+    this.props.navigation.navigate('DetailQuiz', { index, type: this.state.type });
   };
 
   render() {

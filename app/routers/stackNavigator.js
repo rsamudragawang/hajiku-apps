@@ -11,6 +11,7 @@ import Beranda from '../screens/Beranda';
 import Materi from '../screens/Materi';
 import DetailMateri from '../screens/DetailMateri';
 import ListQuiz from '../screens/ListQuiz';
+import DetailQuiz from '../screens/DetailQuiz';
 
 export const HomeStack = StackNavigator(
   {
@@ -100,14 +101,21 @@ export const OnBoardingStack = StackNavigator(
 export const BerandaStack = StackNavigator(
   {
     
-    Beranda: {
-      screen: Beranda,
+   
+    ListQuiz: {
+      screen: ListQuiz,
       navigationOptions: {
         tabBarVisible: false
       }
     },
-    ListQuiz: {
-      screen: ListQuiz,
+    DetailQuiz: {
+      screen: DetailQuiz,
+      navigationOptions: {
+        tabBarVisible: false
+      }
+    },
+    Beranda: {
+      screen: Beranda,
       navigationOptions: {
         tabBarVisible: false
       }
