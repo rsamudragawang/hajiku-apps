@@ -10,6 +10,7 @@ import Register from '../screens/Register';
 import Beranda from '../screens/Beranda';
 import Materi from '../screens/Materi';
 import DetailMateri from '../screens/DetailMateri';
+import ListQuiz from '../screens/ListQuiz';
 
 export const HomeStack = StackNavigator(
   {
@@ -105,7 +106,12 @@ export const BerandaStack = StackNavigator(
         tabBarVisible: false
       }
     },
-    
+    ListQuiz: {
+      screen: ListQuiz,
+      navigationOptions: {
+        tabBarVisible: false
+      }
+    },
     Materi: {
       screen: Materi,
       navigationOptions: {

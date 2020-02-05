@@ -34,7 +34,9 @@ export default class Component extends React.Component {
   _toListMateri = type => {
     this.props.navigation.navigate('Materi', { type });
   };
-
+  _toQuiz = () => {
+    this.props.navigation.navigate('ListQuiz');
+  };
   render() {
     return (
       <View style={styles.container}>
@@ -70,15 +72,18 @@ export default class Component extends React.Component {
             </View>
           </ImageBackground>
           <View style={{ flexDirection: 'row' }}>
-            <View style={styles.cardQuiz}>
-              <View style={{ marginTop: scale(15), marginLeft: scale(15), marginBottom: scale(8) }}>
-                <IconQuiz />
+            <TouchableOpacity onPress={() => this._toQuiz()}>
+              <View style={styles.cardQuiz}>
+                <View style={{ marginTop: scale(15), marginLeft: scale(15), marginBottom: scale(8) }}>
+                  <IconQuiz />
+                </View>
+                <View style={{ marginLeft: scale(15) }}>
+                  <Text style={styles.titleCard}>Quiz</Text>
+                  <Text style={styles.contentCard}>{`${this.state.jumlahMateri}  Quiz`}</Text>
+                </View>
               </View>
-              <View style={{ marginLeft: scale(15) }}>
-                <Text style={styles.titleCard}>Quiz</Text>
-                <Text style={styles.contentCard}>{`${this.state.jumlahMateri}  Quiz`}</Text>
-              </View>
-            </View>
+            </TouchableOpacity>
+
             <View style={styles.cardPengaturan}>
               <View style={{ marginTop: scale(15), marginLeft: scale(15), marginBottom: scale(8) }}>
                 <IconSetting />

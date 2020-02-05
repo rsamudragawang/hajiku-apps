@@ -27,7 +27,8 @@ const fetchData = async (url, params, customHeaders, cachedControll) => {
     ...customHeaders
   };
   const token = await storage.get(STORAGE_KEY.TOKEN_LOGIN);
-  if (token) {
+  console.log(token);
+  if (token.length > 0) {
     if (url === 'http://34.238.41.114:8080/api/users/register') {
       headers = {
         ...headers
@@ -37,11 +38,8 @@ const fetchData = async (url, params, customHeaders, cachedControll) => {
         ...headers,
         Authorization: `Bearer ${token}`
       };
+      console.log(headers);
     }
-  } else {
-    headers = {
-      ...headers
-    };
   }
 
   const response = await fetch(url, {
