@@ -1,6 +1,7 @@
+/* eslint-disable react-native/no-color-literals */
 import { StyleSheet } from 'react-native';
 import METRICS from '../../../constants/metrics';
-import { COLOR_TRANSPARENT, COLOR_GREY, COLOR_ONBOARDING_HEADER } from '../../../styles';
+import { COLOR_TRANSPARENT, COLOR_GREY, COLOR_ONBOARDING_HEADER, COLOR_BASE_PRIMARY_DARK, COLOR_BLACK, COLOR_BASE_PRIMARY_LIGHT, COLOR_WHITE } from '../../../styles';
 import { scale } from '../../../utils/scaling';
 
 const styles = StyleSheet.create({
@@ -8,9 +9,28 @@ const styles = StyleSheet.create({
     width: METRICS.screenWidth,
     height: METRICS.screenHeight
   },
+  bottomContainer: {
+    width: METRICS.screenWidth,
+    height: scale(100),
+    backgroundColor: '#F9FAFB'
+  },
   container: {
     backgroundColor: COLOR_TRANSPARENT,
     position: 'relative'
+  },
+  cardWhite: {
+    position: 'absolute',
+    // width: METRICS.screenWidth,
+    // height: scale(100),
+    // top: scale(5),
+    flex: 1,
+    flexDirection: 'column',
+    justifyContent: 'flex-end',
+    alignItems: 'flex-end',
+    backgroundColor: COLOR_WHITE
+  },
+  cardContainer: {
+    bottom: 0
   },
   slide: {
     backgroundColor: COLOR_TRANSPARENT
@@ -43,7 +63,7 @@ const styles = StyleSheet.create({
   },
 
   textFooter: {
-    color: COLOR_ONBOARDING_HEADER,
+    color: COLOR_BLACK,
     fontFamily: 'Montserrat',
     fontSize: 15
   },
@@ -68,14 +88,16 @@ const styles = StyleSheet.create({
   },
 
   buttonStart: {
-    backgroundColor: COLOR_TRANSPARENT,
-    flexDirection: 'column',
-    position: 'absolute',
-    bottom: scale(0),
+    backgroundColor: COLOR_BASE_PRIMARY_LIGHT,
+    width: 100,
+    // flexDirection: 'column',
+    position: 'relative',
+    marginBottom: scale(50),
     flex: 1,
-    left: scale(245),
-    paddingVertical: scale(37),
-    justifyContent: 'flex-end'
+    // left: scale(300),
+    right: 0,
+    // justifyContent
+    paddingVertical: scale(37)
   }
 });
 

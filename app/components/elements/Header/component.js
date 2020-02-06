@@ -1,5 +1,7 @@
+/* eslint-disable no-unused-expressions */
 import React from 'react';
 import { Text, View } from 'react-native';
+
 import PropTypes from 'prop-types';
 import styles from './styles';
 import BackButton from '../BackButton';
@@ -39,12 +41,13 @@ export default class Component extends React.Component {
     } else if (rightComponent) {
       RightComponent = rightComponent;
     }
-    return <View style={[styles.leftRightContainer, rightContainerStyle]}>{RightComponent}</View>;
+    return <View style={[styles.RightContainer, rightContainerStyle]}>{RightComponent}</View>;
   };
 
   render() {
+    const { ContainerStyle } = this.props;
     return (
-      <View style={styles.container}>
+      <View style={[styles.container, ContainerStyle]}>
         {this._renderLeft()}
         {this._renderCenter()}
         {this._renderRight()}
@@ -58,6 +61,7 @@ Component.propTypes = {
   leftContainerStyle: PropTypes.object,
   centerContainerStyle: PropTypes.object,
   rightContainerStyle: PropTypes.object,
+  ContainerStyle: PropTypes.object,
   leftComponent: PropTypes.oneOfType([PropTypes.element, PropTypes.any]),
   centerComponent: PropTypes.oneOfType([PropTypes.element, PropTypes.any]),
   rightComponent: PropTypes.oneOfType([PropTypes.element, PropTypes.any]),
@@ -71,6 +75,7 @@ Component.defaultProps = {
   leftContainerStyle: {},
   centerContainerStyle: {},
   rightContainerStyle: {},
+  ContainerStyle: {},
   leftComponent: <View />,
   centerComponent: <View />,
   rightComponent: <View />,

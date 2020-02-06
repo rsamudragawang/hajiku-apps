@@ -12,6 +12,12 @@ export default StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center'
   },
+  RightContainer: {
+    flex: 1,
+    alignItems: 'flex-end',
+    justifyContent: 'center',
+    paddingRight: 50
+  },
   leftRightContainer: {
     flex: 1,
     alignItems: 'center',

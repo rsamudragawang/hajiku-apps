@@ -1,0 +1,83 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Component snapshot testing renders without data 1`] = `
+<View
+  style={
+    Object {
+      "alignItems": "center",
+      "flex": 1,
+      "justifyContent": "center",
+    }
+  }
+>
+  <View
+    style={
+      Object {
+        "width": 340,
+      }
+    }
+  >
+    <Text
+      accessible={true}
+      allowFontScaling={true}
+      ellipsizeMode="tail"
+      style={
+        Object {
+          "color": "#AEB9CB",
+          "fontFamily": "Quicksand-Regular",
+          "fontSize": 16,
+          "marginBottom": 7,
+        }
+      }
+    >
+      Field Title
+    </Text>
+    <View
+      style={
+        Object {
+          "alignContent": "center",
+          "backgroundColor": "rgba(0,0,0,0)",
+          "borderBottomColor": "#AEB9CB",
+          "borderBottomWidth": 1,
+          "borderRadius": 6,
+          "height": 200,
+          "overflow": "hidden",
+          "width": 340,
+        }
+      }
+    >
+      <TextInput
+        allowFontScaling={true}
+        editable={false}
+        errorMessage={null}
+        label="Field Title"
+        multiline={true}
+        placeholder="Type anything here…"
+        placeholderTextColor="#AEB9CB"
+        style={
+          Object {
+            "color": "#AEB9CB",
+            "fontFamily": "Quicksand-Regular",
+            "fontSize": 16,
+            "marginHorizontal": 0,
+          }
+        }
+        type="ghost"
+        underlineColorAndroid="rgba(0,0,0,0)"
+      />
+    </View>
+    <Text
+      accessible={true}
+      allowFontScaling={true}
+      ellipsizeMode="tail"
+      style={
+        Object {
+          "color": "#F55151",
+          "fontFamily": "Quicksand-Regular",
+          "fontSize": 12,
+        }
+      }
+    />
+  </View>
+</View>
+`;

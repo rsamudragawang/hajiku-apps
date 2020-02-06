@@ -12,7 +12,7 @@ import Materi from '../screens/Materi';
 import DetailMateri from '../screens/DetailMateri';
 import ListQuiz from '../screens/ListQuiz';
 import DetailQuiz from '../screens/DetailQuiz';
-
+import Quiz from '../screens/Quiz';
 export const HomeStack = StackNavigator(
   {
     Home: {
@@ -101,7 +101,12 @@ export const OnBoardingStack = StackNavigator(
 export const BerandaStack = StackNavigator(
   {
     
-   
+    Quiz: {
+      screen: Quiz,
+      navigationOptions: {
+        tabBarVisible: false
+      }
+    },
     ListQuiz: {
       screen: ListQuiz,
       navigationOptions: {
