@@ -6,17 +6,16 @@
 /* eslint-disable no-undef */
 /* eslint-disable prefer-destructuring */
 import React, { Component } from 'react';
-import { Platform, ScrollView, View, StatusBar, Text } from 'react-native';
+import { Platform, ScrollView, View, StatusBar } from 'react-native';
 import PropTypes from 'prop-types';
 import Button from '../Button';
 import METRICS from '../../../constants/metrics';
 import styles from './styles';
-import I18n from '../../../i18n';
 
 const width = METRICS.screenWidth;
 const height = METRICS.screenHeight;
 
-export default class Swiper extends Component {
+export default class Swiper extends React.Component {
   // constructor(props){
   //   super(props)
   //   this.swipe.bind(this)
@@ -93,7 +92,6 @@ export default class Swiper extends Component {
     if (!diff) {
       return;
     }
-
     index = parseInt(index + Math.round(diff / step), 10);
 
     this.internals.offset = offset;
@@ -117,10 +115,10 @@ export default class Swiper extends Component {
     const diff = this.state.index + 1;
     const x = diff * state.width;
     const y = 0;
+    // this.forceUpdate();
 
     this.scrollView && this.scrollView.scrollTo({ x, y, animated: true });
     this.internals.isScrolling = true;
-
     if (Platform.OS === 'android') {
       setImmediate(() => {
         this.onScrollEnd({
