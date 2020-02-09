@@ -273,6 +273,7 @@ export default class Swiper extends React.Component {
                 }}
                 title="Berikutnya"
                 customText={{ color: '#FFF' }}
+                onPress={onPress}
               />
             </View>
           </View>

@@ -6,15 +6,16 @@
 /* eslint-disable import/default */
 /* eslint-disable react-native/no-color-literals */
 import React from 'react';
-import { View, Text, TouchableOpacity } from 'react-native';
-// import { Timer } from 'react-native-stopwatch-timer';
+import { View, Text, TouchableOpacity, Modal, Alert } from 'react-native';
 import CountDown from 'react-native-countdown-component';
 import PropTypes from 'prop-types';
+import Button from '../../components/elements/Button';
 import Header from '../../components/elements/Header';
 import Swiper from '../../components/elements/Swipper';
 import styles from './styles';
 import { scale } from '../../utils/scaling';
 import { ENDPOINT } from '../../configs';
+import ModalSvg from '../../../assets/svgs/ModalSVG';
 import ASelect from '../../../assets/svgs/ASelect';
 import BSelect from '../../../assets/svgs/BSelect';
 import CSelect from '../../../assets/svgs/CSelect';
@@ -31,7 +32,8 @@ export default class Component extends React.Component {
     this.state = {
       data: [],
       time: 1000,
-      jawaban: []
+      jawaban: [],
+      modalVisible: true
     };
     // this.swiper = new Swiper(props);
   }
@@ -45,17 +47,15 @@ export default class Component extends React.Component {
       time: result.data.time * 60
     });
   };
-  _onPress = () => {
-    this.props.navigation.navigate('Beranda');
+  _onTimeout = () => {
+    this.props.navigation.navigate('Score');
   };
   _setAnswer = (index, answer) => {
     if (this.state.jawaban.length === 0) {
       this.state.jawaban.push({ [index]: answer });
-      console.log(this.state.jawaban);
       this.forceUpdate();
     } else {
       this.state.jawaban[index] = { [index]: answer };
-      console.log(this.state.jawaban);
       this.forceUpdate();
     }
   };
@@ -63,14 +63,17 @@ export default class Component extends React.Component {
   _searchValue = (key, value) => {
     for (let i = 0; i < this.state.jawaban.length; i++) {
       if (this.state.jawaban[i][key] === value) {
-        // console.log(jsonstring[i].Value);
         return true;
       }
     }
   };
+  _onPress = () => {
+    // alert('check')
+    this.setState({ modalVisible: !this.state.modalVisible });
+  };
   render() {
     return (
-      <View>
+      <View style={{ flex: 1 }}>
         <Header
           ContainerStyle={{
             backgroundColor: '#F9FAFB'
@@ -79,7 +82,7 @@ export default class Component extends React.Component {
             <CountDown
               size={20}
               until={this.state.time}
-              onFinish={() => this._onPress()}
+              onFinish={() => this._onTimeout()}
               digitStyle={{ borderColor: '#1CC625' }}
               digitTxtStyle={{ color: '#FF4057' }}
               timeLabelStyle={{ color: 'red', fontWeight: 'bold' }}
@@ -90,7 +93,74 @@ export default class Component extends React.Component {
             />
           }
         />
-        <Swiper total={this.state.data.length}>
+        <Modal
+          // style={{ justifyContent: 'center', alignItems: 'center'}}
+          // animationType="slide"
+          transparent
+          visible={this.state.modalVisible}
+          onRequestClose={() => {
+            Alert.alert('Modal has been closed.');
+          }}
+        >
+          <View
+            style={{
+              flex: 1,
+              flexDirection: 'column',
+              justifyContent: 'center',
+              alignItems: 'center'
+              // backgroundColor: '#FFF'
+            }}
+          >
+            <View
+              style={{
+                width: scale(306),
+                height: scale(360),
+                backgroundColor: '#FFF',
+                paddingBottom: 32,
+                paddingTop: 32,
+                paddingLeft: 25,
+                paddingRight: 25
+              }}
+            >
+              {/* <Text>Hello World!</Text> */}
+              <View style={{ alignItems: 'center' }}>
+                <ModalSvg />
+              </View>
+              <View style={{ marginTop: 20, marginBottom: 20, alignItems: 'center' }}>
+                <Text style={{ fontSize: 14, fontWeight: 'bold' }}>Apakah Anda Yakin ? </Text>
+                <Text style={{ fontSize: 12 }}>Tekan Selesai Untuk Menyelesaikan</Text>
+              </View>
+              <Button
+                customContainer={{
+                  height: 50,
+                  width: scale(250),
+                  backgroundColor: '#5D7DFF',
+                  borderWidth: 1,
+                  borderColor: '#5D7DFF'
+                }}
+                title="Selesai"
+                customText={{ color: '#FFF' }}
+                onPress={this._onTimeout}
+              />
+              <View style={{ marginTop: 16 }}>
+                <Button
+                  customContainer={{
+                    // marginTop: 16,
+                    height: 50,
+                    width: scale(250),
+                    backgroundColor: '#FFF',
+                    borderWidth: 1,
+                    borderColor: '#5D7DFF'
+                  }}
+                  title="Kembali"
+                  onPress={this._onPress}
+                  customText={{ color: '#5D7DFF' }}
+                />
+              </View>
+            </View>
+          </View>
+        </Modal>
+        <Swiper total={this.state.data.length} onPress={this._onPress}>
           {this.state.data.map((data, i) => (
             <View style={styles.styles.slide} key={i}>
               <View

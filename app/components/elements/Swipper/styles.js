@@ -1,7 +1,17 @@
+/* eslint-disable import/named */
+/* eslint-disable no-unused-vars */
 /* eslint-disable react-native/no-color-literals */
 import { StyleSheet } from 'react-native';
 import METRICS from '../../../constants/metrics';
-import { COLOR_TRANSPARENT, COLOR_GREY, COLOR_ONBOARDING_HEADER, COLOR_BASE_PRIMARY_DARK, COLOR_BLACK, COLOR_BASE_PRIMARY_LIGHT, COLOR_WHITE } from '../../../styles';
+import {
+  COLOR_TRANSPARENT,
+  COLOR_GREY,
+  COLOR_ONBOARDING_HEADER,
+  COLOR_BASE_PRIMARY_DARK,
+  COLOR_BLACK,
+  COLOR_BASE_PRIMARY_LIGHT,
+  COLOR_WHITE
+} from '../../../styles';
 import { scale } from '../../../utils/scaling';
 
 const styles = StyleSheet.create({

@@ -13,6 +13,7 @@ import DetailMateri from '../screens/DetailMateri';
 import ListQuiz from '../screens/ListQuiz';
 import DetailQuiz from '../screens/DetailQuiz';
 import Quiz from '../screens/Quiz';
+import Score from '../screens/Score';
 export const HomeStack = StackNavigator(
   {
     Home: {
@@ -100,7 +101,12 @@ export const OnBoardingStack = StackNavigator(
 
 export const BerandaStack = StackNavigator(
   {
-    
+    Score: {
+      screen: Score,
+      navigationOptions: {
+        tabBarVisible: false
+      }
+    },
     Quiz: {
       screen: Quiz,
       navigationOptions: {
