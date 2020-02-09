@@ -9,7 +9,8 @@ export const endpoint = {
   getAll: async id => get(`api/haji/all?data=${id}`),
   getById: async (id, type) => get(`api/haji/?id=${id}&data=${type}`),
   quizAll: async () => get('api/quiz/all'),
-  quizById: async id => get(`api/quiz/?id=${id}`)
+  quizById: async id => get(`api/quiz/?id=${id}`),
+  getNilai: async (id, params) => post(`api/quiz/post/quiz?id=${id}`, params)
 };
 
 export default { endpoint };

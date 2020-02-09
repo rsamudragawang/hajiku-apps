@@ -1,3 +1,4 @@
+/* eslint-disable prefer-destructuring */
 /* eslint-disable consistent-return */
 /* eslint-disable no-plusplus */
 /* eslint-disable react/no-direct-mutation-state */
@@ -33,7 +34,9 @@ export default class Component extends React.Component {
       data: [],
       time: 1000,
       jawaban: [],
-      modalVisible: true
+      jsonJawaban: [],
+      modalVisible: false,
+      index: ''
     };
     // this.swiper = new Swiper(props);
   }
@@ -41,21 +44,32 @@ export default class Component extends React.Component {
     this._getparams();
   }
   _getparams = async () => {
-    const result = await ENDPOINT.quizById('5e3952693697986638c38a43');
+    const { params } = this.props.navigation.state;
+    const getindex = params ? params.index : 'umroh';
+    const result = await ENDPOINT.quizById(getindex);
     this.setState({
+      index: getindex,
       data: result.data.question,
       time: result.data.time * 60
     });
   };
   _onTimeout = () => {
-    this.props.navigation.navigate('Score');
+    const result = this.state.jsonJawaban;
+    const index = this.state.index;
+    const soal = this.state.data.length;
+    this.setState({ modalVisible: !this.state.modalVisible });
+    this.props.navigation.navigate('Score', { result, index, soal });
   };
   _setAnswer = (index, answer) => {
     if (this.state.jawaban.length === 0) {
+      const json = JSON.parse(JSON.stringify({ [index]: answer }));
+      this.setState({ jsonJawaban: [...this.state.jsonJawaban, json] }); // ITS WORK
       this.state.jawaban.push({ [index]: answer });
       this.forceUpdate();
     } else {
       this.state.jawaban[index] = { [index]: answer };
+      const json = JSON.parse(JSON.stringify({ [index]: answer }));
+      this.setState({ jsonJawaban: [...this.state.jsonJawaban, json] });
       this.forceUpdate();
     }
   };
@@ -222,7 +236,7 @@ export default class Component extends React.Component {
                   </View>
                 </TouchableOpacity>
               ) : (
-                <TouchableOpacity onPress={() => this._setAnswer(i, data[0])}>
+                <TouchableOpacity onPress={() => this._setAnswer(i.toString(), data[0].toString())}>
                   <View
                     style={{
                       margin: 15,

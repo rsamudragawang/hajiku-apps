@@ -30,7 +30,8 @@ export default class Component extends React.Component {
       index: '',
       time: '',
       count: 0,
-      soal: []
+      soal: [],
+      idsoal: ''
     };
   }
   componentWillMount() {
@@ -41,6 +42,7 @@ export default class Component extends React.Component {
     const getindex = params ? params.index : 'umroh';
     const result = await ENDPOINT.quizById(getindex);
     this.setState({
+      idsoal: getindex,
       title: result.data.title,
       desc: result.data.description,
       imageLink: result.data.imageLink,
@@ -140,7 +142,7 @@ export default class Component extends React.Component {
             {this.state.desc}
           </Text>
           <Button
-            onPress={this._onPress}
+            onPress={() => this._toDetail(this.state.idsoal)}
             title="Mulai Sekarang"
             customContainer={{
               backgroundColor: '#FF5151',

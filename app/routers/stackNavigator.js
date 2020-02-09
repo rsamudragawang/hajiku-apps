@@ -101,12 +101,19 @@ export const OnBoardingStack = StackNavigator(
 
 export const BerandaStack = StackNavigator(
   {
+    
+    Beranda: {
+      screen: Beranda,
+      navigationOptions: {
+        tabBarVisible: false
+      }
+    },
     Score: {
       screen: Score,
       navigationOptions: {
         tabBarVisible: false
       }
-    },
+    }, 
     Quiz: {
       screen: Quiz,
       navigationOptions: {
@@ -121,12 +128,6 @@ export const BerandaStack = StackNavigator(
     },
     DetailQuiz: {
       screen: DetailQuiz,
-      navigationOptions: {
-        tabBarVisible: false
-      }
-    },
-    Beranda: {
-      screen: Beranda,
       navigationOptions: {
         tabBarVisible: false
       }

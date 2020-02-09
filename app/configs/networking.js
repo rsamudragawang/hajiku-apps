@@ -100,6 +100,7 @@ const fetchData = async (url, params, customHeaders, cachedControll) => {
 // };
 
 const get = async (endpoint, params = {}, headers = {}) => {
+  console.log(params)
   let queryString = Object.keys(params)
     .map(key => `${key}=${params[key]}`)
     .join('&');
@@ -115,6 +116,7 @@ const get = async (endpoint, params = {}, headers = {}) => {
 };
 
 const post = async (endpoint, params = {}, headers = {}) => {
+  console.log(params)
   const url = `${config.baseUrl}${endpoint}`;
   const fetchParams = {
     method: 'POST',
