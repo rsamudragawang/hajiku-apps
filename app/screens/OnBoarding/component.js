@@ -31,7 +31,7 @@ export default class Component extends React.Component {
             flex: 1,
             justifyContent: 'flex-end',
             alignItems: 'center',
-            paddingBottom: 54,
+            paddingBottom: 24,
             height: 150
           }}
         >
@@ -40,13 +40,13 @@ export default class Component extends React.Component {
             title="Mulai Sekarang"
             customContainer={{
               backgroundColor: '#FF5151',
-              borderRadius: 5,
+              // backgroundColor: '#FFF',
               width: 328,
-              height: 50,
-              marginBottom: 10
+              height: 50
             }}
-            customText={{ color: '#fff', letterSpacing: 300 }}
+            customText={{ color: '#fff', fontFamily: 'Montserrat-SemiBold', fontSize: 14 }}
           />
+          <View style={{ marginTop: 10 }} />
           <Button
             onPress={this._toLogin}
             title="Masuk"
@@ -54,9 +54,10 @@ export default class Component extends React.Component {
               backgroundColor: '#FFF',
               width: 328,
               height: 50,
-              borderWidth: 1
+              borderWidth: 1,
+              borderColor: '#c4c4c4'
             }}
-            customText={{ color: '#000' }}
+            customText={{ color: '#000', fontFamily: 'Montserrat-SemiBold', fontSize: 14 }}
           />
         </View>
       </View>
