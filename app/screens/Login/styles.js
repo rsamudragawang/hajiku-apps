@@ -12,33 +12,45 @@ const styles = StyleSheet.create({
   },
   container: {
     flex: 1,
-    backgroundColor: COLOR_WHITE
+    backgroundColor: COLOR_WHITE,
+    paddingHorizontal: scale(15)
   },
   hiasan: {
     width: scale(141),
     height: scale(203)
   },
   inputText: {
-    margin: scale(15),
-    width: scale(315),
-    height: scale(40),
+    width: '100%',
+    height: scale(50),
     borderRadius: scale(5),
     borderColor: '#c4c4c4',
 
     borderWidth: scale(1)
   },
-  input: { marginLeft: scale(30), ...FONT_BODY2_PRIMARY },
-  inputLogo: { width: scale(20), height: scale(20), position: 'absolute', margin: scale(8) },
+  input: {
+    flex: 1,
+    justifyContent: 'center',
+    marginLeft: scale(45),
+    fontFamily: 'Montserrat-Light'
+  },
+  inputLogo: { width: scale(20), height: scale(20), position: 'absolute', margin: scale(15) },
   title: {
-    fontStyle: 'normal',
-    fontWeight: 'bold',
+    color: '#29291e',
     fontSize: 30,
-    marginLeft: scale(15),
-    marginTop: scale(60)
+    marginTop: scale(60),
+    fontFamily: 'Montserrat-Bold'
   },
   text: {
-    marginLeft: scale(15)
-    // fontSize: 20
+    fontFamily: 'Montserrat-Medium',
+    fontSize: 12,
+    marginTop: scale(20),
+    marginBottom: scale(10)
+  },
+  top20: {
+    marginTop: scale(20)
+  },
+  top10: {
+    marginBottom: scale(10)
   }
 });
 

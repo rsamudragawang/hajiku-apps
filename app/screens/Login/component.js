@@ -53,6 +53,7 @@ export default class Component extends React.Component {
     return (
       <View style={styles.container}>
         <Text style={styles.title}>{I18n.t('login')}</Text>
+        <View style={{ marginTop: 30 }} />
         <Text style={styles.text}>{I18n.t('email')}</Text>
         <View style={styles.inputText}>
           <View style={styles.inputLogo}>
@@ -83,23 +84,24 @@ export default class Component extends React.Component {
             onChangeText={password => this.setState({ password })}
           />
         </View>
+        <View style={{ marginTop: scale(45) }} />
         <Button
           onPress={this._onPress}
           title="Masuk"
           customContainer={{
             backgroundColor: '#FF5151',
-            borderRadius: 5,
-            width: scale(315),
-            height: 50,
-            marginBottom: 10,
-            marginLeft: 15
+            width: '100%',
+            height: 50
           }}
-          customText={{ color: '#fff', letterSpacing: 300 }}
+          customText={{ color: '#fff', fontFamily: 'Montserrat-Bold' }}
         />
-        <View style={{ flexDirection: 'row', marginLeft: 15 }}>
-          <Text>Belum punya akun? </Text>
+        <View style={{ flexDirection: 'row', marginTop: scale(20) }}>
+          <Text style={{ fontSize: scale(12), fontFamily: 'Montserrat-Regular' }}>Belum punya akun? </Text>
           <TouchableOpacity onPress={this._toRegister}>
-            <Text style={{ color: '#FF5151' }}> Daftar Sekarang </Text>
+            <Text style={{ color: '#FF5151', fontSize: scale(12), fontFamily: 'Montserrat-SemiBold' }}>
+              {' '}
+              Daftar Sekarang{' '}
+            </Text>
           </TouchableOpacity>
         </View>
       </View>
