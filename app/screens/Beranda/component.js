@@ -43,7 +43,7 @@ export default class Component extends React.Component {
         <ScrollView>
           <ImageBackground style={styles.imageBackground} source={IMAGES.menu}>
             <View style={styles.textContainer}>
-              <Text style={styles.textHello}>HALOOOO,</Text>
+              <Text style={styles.textHello}>Hallo,</Text>
               <Text style={styles.textName}>Pak Haji</Text>
             </View>
             <View style={{ flexDirection: 'row' }}>
@@ -96,11 +96,19 @@ export default class Component extends React.Component {
           </View>
           <Text style={styles.discover}>Discover Quizqoeh</Text>
           {this.state.data.map((data, index) => (
-            <View key={index}>
+            <View key={index} style={{ marginBottom: scale(15) }}>
               <TouchableOpacity onPress={() => this._toDetail(data._id, data.tag)}>
                 <View style={styles.containerDiscover}>
                   <ImageBackground source={{ uri: data.imageLink }} style={styles.imageDiscover}>
-                    <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
+                    <View
+                      // eslint-disable-next-line react-native/no-color-literals
+                      style={{
+                        flex: 1,
+                        justifyContent: 'center',
+                        alignItems: 'center',
+                        backgroundColor: 'rgba(0, 0, 0, .5)'
+                      }}
+                    >
                       <Text style={styles.textCard}>{data.title}</Text>
                     </View>
                   </ImageBackground>

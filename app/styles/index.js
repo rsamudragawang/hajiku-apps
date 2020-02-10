@@ -28,7 +28,7 @@ export const COLOR_EVENT_INFORMATION = '#47acf7';
 export const COLOR_EVENT_WARNING = '#f8e71c';
 export const COLOR_EVENT_INACTIVE = gray.gray_30;
 
-export const COLOR_WHITE = white;
+export const COLOR_WHITE = '#F9FAFB';
 export const COLOR_WHITE_OPACITY50 = 'rgba(255,255,255,0.5)';
 export const COLOR_GREY = gray.gray_50;
 export const COLOR_GREY_DARK = gray.gray_70;

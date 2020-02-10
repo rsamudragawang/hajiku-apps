@@ -41,9 +41,13 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: COLOR_WHITE
   },
+  containerFix: {
+    paddingHorizontal: scale(15)
+  },
   containerDiscover: {
+    borderRadius: 4,
     marginLeft: scale(15),
-    marginTop: scale(15)
+    marginTop: scale(16)
   },
   imageBackground: {
     width: Metrics.screenWidth,
@@ -52,26 +56,30 @@ const styles = StyleSheet.create({
   titleCard: {
     color: '#FFF',
     fontSize: 14,
-    fontWeight: 'bold'
+    fontFamily: 'Montserrat-Bold'
   },
   contentCard: {
     color: '#FFF',
     fontSize: 12,
-    marginTop: scale(5)
+    marginTop: scale(5),
+    fontFamily: 'Montserrat-Regular'
   },
   discover: {
-    marginTop: scale(24),
-    marginLeft: scale(15),
+    color: '#29291E',
+    marginTop: scale(32),
+    paddingHorizontal: scale(15),
     fontSize: 20,
-    fontWeight: 'bold'
+    fontFamily: 'Montserrat-Bold'
   },
   imageDiscover: {
+    overflow: 'hidden',
+    borderRadius: 4,
     width: scale(328),
     height: scale(120)
   },
   textCard: {
     fontSize: 20,
-    fontWeight: 'bold',
+    fontFamily: 'Montserrat-Bold',
     color: '#FFF'
   },
   textContainer: {
@@ -80,12 +88,13 @@ const styles = StyleSheet.create({
   },
   textHello: {
     color: '#FFF',
-    fontSize: 32
+    fontSize: 32,
+    fontFamily: 'Montserrat-Medium'
   },
   textName: {
     color: '#FFF',
     fontSize: 32,
-    fontWeight: 'bold'
+    fontFamily: 'Montserrat-Bold'
   }
 });
 
