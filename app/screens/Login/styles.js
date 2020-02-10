@@ -2,7 +2,7 @@
 import { StyleSheet } from 'react-native';
 // import { COLOR_BASE_PRIMARY_MAIN } from '../../styles';
 import { scale } from '../../utils/scaling';
-import { COLOR_WHITE, COLOR_BASE_PRIMARY_MAIN, FONT_BODY2_PRIMARY } from '../../styles';
+import { COLOR_WHITE, COLOR_BASE_PRIMARY_MAIN } from '../../styles';
 
 const styles = StyleSheet.create({
   button: {

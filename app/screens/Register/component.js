@@ -1,7 +1,7 @@
 /* eslint-disable react-native/no-color-literals */
 /* eslint-disable react/no-unused-state */
 import React from 'react';
-import { View, TextInput, Text, TouchableOpacity, ToastAndroid, Alert } from 'react-native';
+import { View, TextInput, Text, TouchableOpacity, ToastAndroid, Alert, ScrollView } from 'react-native';
 import PropTypes from 'prop-types';
 import Button from '../../components/elements/Button';
 import Account from '../../../assets/svgs/Account';
@@ -50,86 +50,89 @@ export default class Component extends React.Component {
   };
   render() {
     return (
-      <View style={styles.container}>
-        <Text style={styles.title}>{I18n.t('register')}</Text>
-        <Text style={styles.text}>{I18n.t('fullName')}</Text>
-        <View style={styles.inputText}>
-          <View style={styles.inputLogo}>
-            <Account />
+      <ScrollView>
+        <View style={styles.container}>
+          <Text style={styles.title}>{I18n.t('register')}</Text>
+          <Text style={styles.text}>{I18n.t('fullName')}</Text>
+          <View style={styles.inputText}>
+            <View style={styles.inputLogo}>
+              <Account />
+            </View>
+            <TextInput
+              style={styles.input}
+              underlineColorAndroid="transparent"
+              placeholder={I18n.t('fullName')}
+              editable
+              autoCapitalize="none"
+              onChangeText={fullname => this.setState({ fullname })}
+            />
           </View>
-          <TextInput
-            style={styles.input}
-            underlineColorAndroid="transparent"
-            placeholder={I18n.t('fullName')}
-            editable
-            autoCapitalize="none"
-            onChangeText={fullname => this.setState({ fullname })}
-          />
-        </View>
-        <Text style={styles.text}>{I18n.t('nickName')}</Text>
-        <View style={styles.inputText}>
-          <View style={styles.inputLogo}>
-            <Account />
+          <Text style={styles.text}>{I18n.t('nickName')}</Text>
+          <View style={styles.inputText}>
+            <View style={styles.inputLogo}>
+              <Account />
+            </View>
+            <TextInput
+              style={styles.input}
+              underlineColorAndroid="transparent"
+              placeholder={I18n.t('nickName')}
+              editable
+              autoCapitalize="none"
+              onChangeText={username => this.setState({ username })}
+            />
           </View>
-          <TextInput
-            style={styles.input}
-            underlineColorAndroid="transparent"
-            placeholder={I18n.t('nickName')}
-            editable
-            autoCapitalize="none"
-            onChangeText={username => this.setState({ username })}
-          />
-        </View>
-        <Text style={styles.text}>{I18n.t('email')}</Text>
-        <View style={styles.inputText}>
-          <View style={styles.inputLogo}>
-            <Email />
+          <Text style={styles.text}>{I18n.t('email')}</Text>
+          <View style={styles.inputText}>
+            <View style={styles.inputLogo}>
+              <Email />
+            </View>
+            <TextInput
+              style={styles.input}
+              textContentType="emailAddress"
+              underlineColorAndroid="transparent"
+              placeholder={I18n.t('email')}
+              editable
+              autoCapitalize="none"
+              onChangeText={email => this.setState({ email })}
+            />
           </View>
-          <TextInput
-            style={styles.input}
-            textContentType="emailAddress"
-            underlineColorAndroid="transparent"
-            placeholder={I18n.t('email')}
-            editable
-            autoCapitalize="none"
-            onChangeText={email => this.setState({ email })}
-          />
-        </View>
-        <Text style={styles.text}>{I18n.t('password')}</Text>
-        <View style={styles.inputText}>
-          <View style={styles.inputLogo}>
-            <Locked />
+          <Text style={styles.text}>{I18n.t('password')}</Text>
+          <View style={styles.inputText}>
+            <View style={styles.inputLogo}>
+              <Locked />
+            </View>
+            <TextInput
+              style={styles.input}
+              underlineColorAndroid="transparent"
+              secureTextEntry={this.state.hidden}
+              placeholder={I18n.t('password')}
+              editable
+              autoCapitalize="none"
+              onChangeText={password => this.setState({ password })}
+            />
           </View>
-          <TextInput
-            style={styles.input}
-            underlineColorAndroid="transparent"
-            secureTextEntry={this.state.hidden}
-            placeholder={I18n.t('password')}
-            editable
-            autoCapitalize="none"
-            onChangeText={password => this.setState({ password })}
+          <View style={{ marginTop: scale(45) }} />
+          <Button
+            onPress={this._onPress}
+            title="Daftar"
+            customContainer={{
+              backgroundColor: '#FF5151',
+              width: '100%',
+              height: 50
+            }}
+            customText={{ color: '#fff', fontFamily: 'Montserrat-Bold' }}
           />
+          <View style={{ flexDirection: 'row', marginTop: scale(20), marginBottom: scale(50) }}>
+            <Text style={{ fontSize: scale(12), fontFamily: 'Montserrat-Regular' }}>Sudah punya akun? </Text>
+            <TouchableOpacity onPress={this._toLogin}>
+              <Text style={{ color: '#FF5151', fontSize: scale(12), fontFamily: 'Montserrat-SemiBold' }}>
+                {' '}
+                Masuk Sekarang{' '}
+              </Text>
+            </TouchableOpacity>
+          </View>
         </View>
-        <Button
-          onPress={this._onPress}
-          title="Daftar"
-          customContainer={{
-            backgroundColor: '#FF5151',
-            borderRadius: 5,
-            width: scale(315),
-            height: scale(50),
-            marginBottom: scale(10),
-            marginLeft: scale(15)
-          }}
-          customText={{ color: '#fff', letterSpacing: 300 }}
-        />
-        <View style={{ flexDirection: 'row', marginLeft: 15 }}>
-          <Text>Sudah punya akun? </Text>
-          <TouchableOpacity onPress={this._toLogin}>
-            <Text style={{ color: '#FF5151' }}> Masuk Sekarang </Text>
-          </TouchableOpacity>
-        </View>
-      </View>
+      </ScrollView>
     );
   }
 }
