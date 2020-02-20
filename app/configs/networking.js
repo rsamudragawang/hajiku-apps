@@ -9,7 +9,7 @@ import storage from '../utils/storage';
 import { STORAGE_KEY } from '../constants';
 
 export const config = {
-  baseUrl: 'http://34.238.41.114:8080/'
+  baseUrl: 'http://35.173.220.127:8080/'
 };
 
 export const STATUS_CODE = {
@@ -27,7 +27,7 @@ const fetchData = async (url, params, customHeaders, cachedControll) => {
     ...customHeaders
   };
   const token = await storage.get(STORAGE_KEY.TOKEN_LOGIN);
-  console.log(token);
+  // console.log(token);
   if (token.length > 0) {
     if (url === 'http://34.238.41.114:8080/api/users/register') {
       headers = {

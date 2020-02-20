@@ -24,16 +24,16 @@ const styles = StyleSheet.create({
   },
   collapseProduct: {
     flexDirection: 'row',
-    borderColor: gray.gray_low,
+    borderColor: '#EBEBEB',
     borderWidth: 1,
     borderRadius: 5,
-    height: scale(70),
+    height: scale(60),
     marginBottom: scale(15)
   },
   viewDesc: {
     marginBottom: scale(15),
     flexDirection: 'row',
-    borderColor: gray.gray_low,
+    borderColor: '#EBEBEB',
     borderWidth: 1,
     borderRadius: 5,
     alignSelf: 'baseline',
@@ -46,18 +46,21 @@ const styles = StyleSheet.create({
   },
   viewNumberList: {
     flex: 1,
-    margin: scale(10),
+    // margin: scale(6),
+    padding: scale(8),
     justifyContent: 'center',
     backgroundColor: '#738FFF'
   },
   listProduct: {
     ...FONT_NORMAL_PRIMARY,
-    color: gray.gray_dark
+    color: gray.gray_dark,
+    fontFamily: 'Montserrat-SemiBold',
+    fontSize: scale(13)
   },
   listProductTitle: {
     ...FONT_NORMAL_PRIMARY,
-    color: gray.gray_dark,
-    fontWeight: 'bold'
+    fontFamily: 'Montserrat-Bold',
+    color: gray.gray_dark
   },
   listProductNomor: {
     ...FONT_NORMAL_NOMOR,

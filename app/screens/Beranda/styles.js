@@ -6,7 +6,6 @@ import { scale } from '../../utils/scaling';
 
 const styles = StyleSheet.create({
   cardHaji: {
-    marginLeft: scale(15),
     marginTop: scale(30),
     backgroundColor: '#FF6060',
     height: scale(100),
@@ -14,8 +13,9 @@ const styles = StyleSheet.create({
     borderRadius: 10
   },
   cardUmroh: {
-    borderRadius: 10,
     marginLeft: scale(15),
+    borderRadius: 10,
+    marginRight: scale(15),
     marginTop: scale(30),
     backgroundColor: '#FFC275',
     height: scale(100),
@@ -23,7 +23,6 @@ const styles = StyleSheet.create({
   },
   cardQuiz: {
     borderRadius: 10,
-    marginLeft: scale(15),
     marginTop: scale(40),
     backgroundColor: '#A292FF',
     height: scale(100),

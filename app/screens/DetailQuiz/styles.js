@@ -7,7 +7,8 @@ import { gray } from '../../styles/colors';
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: COLOR_WHITE
+    backgroundColor: COLOR_WHITE,
+    paddingHorizontal: scale(15)
   },
   containerDiscover: {
     marginLeft: scale(15),

@@ -86,12 +86,18 @@ export default class Component extends React.Component {
       <View style={styles.container}>
         <Header />
         <ScrollView>
-          <Text style={{ fontStyle: 'normal', fontWeight: 'bold', fontSize: 32, marginLeft: 15 }}>
+          <Text style={{ fontSize: 32, marginLeft: 15, fontFamily: 'Montserrat-Bold', color: '#29291e' }}>
             {this.state.title}
           </Text>
           <Image
             resizeMode="cover"
-            style={{ width: scale(328), height: scale(180), marginLeft: 15, marginTop: 15 }}
+            style={{
+              width: scale(328),
+              height: scale(180),
+              marginLeft: 15,
+              marginTop: 16,
+              borderRadius: scale(4)
+            }}
             source={{ uri: this.state.imageLink }}
           />
           <Text
@@ -100,41 +106,13 @@ export default class Component extends React.Component {
               textAlign: 'justify',
               marginLeft: 15,
               marginTop: 24,
-              fontWeight: '300',
-              fontSize: 12
+              fontSize: 12,
+              fontFamily: 'Montserrat-Light',
+              color: '#29291e'
             }}
           >
             {this.state.desc}
           </Text>
-          {this.state.videoLink.length > 0 ? (
-            <View>
-              <Text
-                style={{
-                  fontStyle: 'normal',
-                  fontWeight: 'bold',
-                  fontSize: 32,
-                  marginLeft: 15,
-                  marginTop: 24
-                }}
-              >
-                Video
-              </Text>
-              <View style={{ width: scale(328), height: scale(180), marginLeft: 15, marginTop: 15 }}>
-                <YouTube
-                  apiKey="AIzaSyAuIuXHM8REnj7bkRxhZuu96O4wXvNDLB8"
-                  videoId={this.state.videoLink} // The YouTube video ID
-                  play // control playback of video with true/false
-                  // fullscreen // control whether the video should play in fullscreen or inline
-                  loop // control whether the video should loop when ended
-                  onReady={() => this.setState({ isReady: true })}
-                  onChangeState={e => this.setState({ status: e.state })}
-                  onChangeQuality={e => this.setState({ quality: e.quality })}
-                  onError={e => this.setState({ error: e.error })}
-                  style={{ width: scale(328), height: scale(180) }}
-                />
-              </View>
-            </View>
-          ) : null}
           {this.state.subMateri.length > 0 ? (
             <View
               style={{
@@ -168,7 +146,14 @@ export default class Component extends React.Component {
                   </TouchableOpacity>
                   {this.state.index === index ? (
                     <View style={styles.viewDesc}>
-                      <Text style={{ textAlign: 'justify', lineHeight: 27, margin: 16 }}>
+                      <Text
+                        style={{
+                          textAlign: 'justify',
+                          lineHeight: 27,
+                          margin: 16,
+                          fontFamily: 'Montserrat-Light'
+                        }}
+                      >
                         {materi.description}
                       </Text>
                     </View>
@@ -189,6 +174,43 @@ export default class Component extends React.Component {
                   </TouchableOpacity>
                 </View>
               </TouchableOpacity> */}
+            </View>
+          ) : null}
+          {this.state.videoLink.length > 0 ? (
+            <View>
+              <Text
+                style={{
+                  fontSize: 32,
+                  marginLeft: 15,
+                  fontFamily: 'Montserrat-Bold',
+                  color: '#29291e',
+                  marginTop: 24
+                }}
+              >
+                Video
+              </Text>
+              <View
+                style={{
+                  width: scale(328),
+                  height: scale(180),
+                  marginLeft: 15,
+                  marginTop: 15,
+                  marginBottom: scale(20)
+                }}
+              >
+                <YouTube
+                  apiKey="AIzaSyAuIuXHM8REnj7bkRxhZuu96O4wXvNDLB8"
+                  videoId={this.state.videoLink} // The YouTube video ID
+                  play // control playback of video with true/false
+                  // fullscreen // control whether the video should play in fullscreen or inline
+                  loop // control whether the video should loop when ended
+                  onReady={() => this.setState({ isReady: true })}
+                  onChangeState={e => this.setState({ status: e.state })}
+                  onChangeQuality={e => this.setState({ quality: e.quality })}
+                  onError={e => this.setState({ error: e.error })}
+                  style={{ width: scale(328), height: scale(180) }}
+                />
+              </View>
             </View>
           ) : null}
         </ScrollView>

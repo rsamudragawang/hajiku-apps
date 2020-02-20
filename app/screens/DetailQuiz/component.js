@@ -85,63 +85,53 @@ export default class Component extends React.Component {
       <View style={styles.container}>
         <Header />
         <ScrollView>
-          <Text style={{ fontStyle: 'normal', fontWeight: 'bold', fontSize: 32, marginLeft: 15 }}>
+          <Text style={{ fontSize: 32, fontFamily: 'Montserrat-Bold', color: '#29291e' }}>
             {this.state.title}
           </Text>
           <Image
             resizeMode="cover"
-            style={{ width: scale(328), height: scale(180), marginLeft: 15, marginTop: 15 }}
+            style={{
+              width: scale(328),
+              height: scale(180),
+              marginTop: 15,
+              borderRadius: scale(4)
+            }}
             source={{ uri: this.state.imageLink }}
           />
-          <Text
-            style={{ fontStyle: 'normal', fontWeight: 'bold', fontSize: 14, marginLeft: 15, marginTop: 15 }}
-          >
-            Waktu
-          </Text>
+          <Text style={{ fontFamily: 'Montserrat-Bold', fontSize: 14, marginTop: 15 }}>Waktu</Text>
           <Text
             style={{
               lineHeight: 25,
               textAlign: 'justify',
-              marginLeft: 15,
-              fontWeight: '300',
+              fontFamily: 'Montserrat-Light',
               fontSize: 12
             }}
           >
             {`${this.state.time} Menit`}
           </Text>
-          <Text
-            style={{ fontStyle: 'normal', fontWeight: 'bold', fontSize: 14, marginLeft: 15, marginTop: 15 }}
-          >
-            Jumlah Soal
-          </Text>
+          <Text style={{ fontFamily: 'Montserrat-Bold', fontSize: 14, marginTop: 15 }}>Jumlah Soal</Text>
           <Text
             style={{
               lineHeight: 25,
               textAlign: 'justify',
-              marginLeft: 15,
-              fontWeight: '300',
+              fontFamily: 'Montserrat-Light',
               fontSize: 12
             }}
           >
             {this.state.count}
           </Text>
-          <Text
-            style={{ fontStyle: 'normal', fontWeight: 'bold', fontSize: 14, marginLeft: 15, marginTop: 15 }}
-          >
-            Deskripsi
-          </Text>
+          <Text style={{ fontFamily: 'Montserrat-Bold', fontSize: 14, marginTop: 15 }}>Deskripsi</Text>
           <Text
             style={{
               lineHeight: 25,
               textAlign: 'justify',
-              marginLeft: 15,
-              fontWeight: '300',
+              fontFamily: 'Montserrat-Light',
               fontSize: 12
             }}
           >
             {this.state.desc}
           </Text>
-          <Button
+          {/* <Button
             onPress={() => this._toDetail(this.state.idsoal)}
             title="Mulai Sekarang"
             customContainer={{
@@ -153,6 +143,16 @@ export default class Component extends React.Component {
               marginLeft: 15
             }}
             customText={{ color: '#fff', letterSpacing: 300 }}
+          /> */}
+          <Button
+            onPress={this._toDetail(this.state.idsoal)}
+            title="Masuk"
+            customContainer={{
+              backgroundColor: '#FF5151',
+              width: '100%',
+              height: 50
+            }}
+            customText={{ color: '#fff', fontFamily: 'Montserrat-Bold' }}
           />
         </ScrollView>
       </View>

@@ -9,17 +9,20 @@ const styles = StyleSheet.create({
     backgroundColor: COLOR_WHITE
   },
   containerDiscover: {
+    borderRadius: 4,
     marginLeft: scale(15),
-    marginTop: scale(15)
-  },
-  imageDiscover: {
-    width: scale(328),
-    height: scale(120)
+    marginTop: scale(16)
   },
   textCard: {
     fontSize: 20,
-    fontWeight: 'bold',
+    fontFamily: 'Montserrat-Bold',
     color: '#FFF'
+  },
+  imageDiscover: {
+    overflow: 'hidden',
+    borderRadius: 4,
+    width: scale(328),
+    height: scale(120)
   }
 });
 
