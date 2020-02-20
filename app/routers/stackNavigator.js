@@ -13,6 +13,9 @@ import DetailMateri from '../screens/DetailMateri';
 import ListQuiz from '../screens/ListQuiz';
 import DetailQuiz from '../screens/DetailQuiz';
 import Quiz from '../screens/Quiz';
+import SettingScreen from '../screens/Setting';
+import TentangScreen from '../screens/Tentang';
+import BantuanScreen from '../screens/Bantuan';
 import Score from '../screens/Score';
 export const HomeStack = StackNavigator(
   {
@@ -95,6 +98,30 @@ export const OnBoardingStack = StackNavigator(
       }
     }
     
+  },
+  { headerMode: 'none', navigationOptions: { tabBarVisible: false } }
+);
+
+export const SettingStack = StackNavigator(
+  {
+    Setting: {
+      screen: SettingScreen,
+      navigationOptions: {
+        tabBarVisible: false
+      }
+    },
+    Bantuan: {
+      screen: BantuanScreen,
+      navigationOptions: {
+        tabBarVisible: false
+      }
+    },
+    Tentang: {
+      screen: TentangScreen,
+      navigationOptions: {
+        tabBarVisible: false
+      }
+    },
   },
   { headerMode: 'none', navigationOptions: { tabBarVisible: false } }
 );

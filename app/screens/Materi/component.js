@@ -1,3 +1,4 @@
+/* eslint-disable react-native/no-color-literals */
 import React from 'react';
 import { View, Text, Image, ImageBackground, ScrollView, TouchableOpacity } from 'react-native';
 import PropTypes from 'prop-types';
@@ -6,7 +7,6 @@ import styles from './styles';
 import IMAGES from '../../configs/images';
 import { ENDPOINT } from '../../configs';
 import { scale } from '../../utils/scaling';
-
 
 export default class Component extends React.Component {
   constructor(props) {
