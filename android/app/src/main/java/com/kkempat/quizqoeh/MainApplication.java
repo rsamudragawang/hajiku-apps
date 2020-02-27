@@ -1,4 +1,4 @@
-package com.component;
+package com.kkempat.quizqoeh;
 
 import android.app.Application;
 

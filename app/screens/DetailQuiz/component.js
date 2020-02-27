@@ -145,7 +145,7 @@ export default class Component extends React.Component {
             customText={{ color: '#fff', letterSpacing: 300 }}
           /> */}
           <Button
-            onPress={this._toDetail(this.state.idsoal)}
+            onPress={() => this._toDetail(this.state.idsoal)}
             title="Masuk"
             customContainer={{
               backgroundColor: '#FF5151',

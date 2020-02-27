@@ -9,6 +9,8 @@ import IconQuiz from '../../../assets/svgs/IconQuiz';
 import IconSetting from '../../../assets/svgs/IconSetting';
 import { scale } from '../../utils/scaling';
 import { ENDPOINT } from '../../configs';
+import storage from '../../utils/storage';
+import { STORAGE_KEY } from '../../constants';
 
 export default class Component extends React.Component {
   constructor(props) {
@@ -16,7 +18,8 @@ export default class Component extends React.Component {
     // this.handleBackButtonClick = this.handleBackButtonClick.bind(this);
     this.state = {
       jumlahMateri: 8,
-      data: []
+      data: [],
+      name: 'name'
     };
     // this._showPass = this._showPass.bind(this);
   }
@@ -28,7 +31,8 @@ export default class Component extends React.Component {
   };
   _getData = async () => {
     const result = await ENDPOINT.getAll('discover');
-    this.setState({ data: result.data });
+    const name = await storage.get(STORAGE_KEY.NAME);
+    this.setState({ data: result.data, name });
   };
   _onPress = () => {};
   _toListMateri = type => {
@@ -37,6 +41,9 @@ export default class Component extends React.Component {
   _toQuiz = () => {
     this.props.navigation.navigate('ListQuiz');
   };
+  _toPeraturan = () => {
+    this.props.navigation.navigate('Setting');
+  };
   render() {
     return (
       <View style={styles.container}>
@@ -44,7 +51,7 @@ export default class Component extends React.Component {
           <ImageBackground style={styles.imageBackground} source={IMAGES.menu}>
             <View style={styles.textContainer}>
               <Text style={styles.textHello}>Hallo,</Text>
-              <Text style={styles.textName}>Pak Haji</Text>
+              <Text style={styles.textName}>{this.state.name}</Text>
             </View>
             <View style={{ flexDirection: 'row', marginLeft: scale(15), marginRight: scale(15) }}>
               <TouchableOpacity onPress={() => this._toListMateri('haji')}>
@@ -85,13 +92,15 @@ export default class Component extends React.Component {
             </TouchableOpacity>
 
             <View style={styles.cardPengaturan}>
-              <View style={{ marginTop: scale(15), marginLeft: scale(15), marginBottom: scale(8) }}>
-                <IconSetting />
-              </View>
-              <View style={{ marginLeft: scale(15) }}>
-                <Text style={styles.titleCard}>Pengaturan</Text>
-                <Text style={styles.contentCard}>Lihat Selengkapnya</Text>
-              </View>
+              <TouchableOpacity onPress={() => this._toPeraturan()}>
+                <View style={{ marginTop: scale(15), marginLeft: scale(15), marginBottom: scale(8) }}>
+                  <IconSetting />
+                </View>
+                <View style={{ marginLeft: scale(15) }}>
+                  <Text style={styles.titleCard}>Pengaturan</Text>
+                  <Text style={styles.contentCard}>Lihat Selengkapnya</Text>
+                </View>
+              </TouchableOpacity>
             </View>
           </View>
           <Text style={styles.discover}>Discover Quizqoeh</Text>

@@ -17,6 +17,8 @@ import SettingScreen from '../screens/Setting';
 import TentangScreen from '../screens/Tentang';
 import BantuanScreen from '../screens/Bantuan';
 import Score from '../screens/Score';
+import SessionScreen from '../screens/SessionScreen';
+
 export const HomeStack = StackNavigator(
   {
     Home: {
@@ -79,6 +81,12 @@ export const AccountStack = StackNavigator(
 
 export const OnBoardingStack = StackNavigator(
   {
+    SessionScreen: {
+      screen: SessionScreen,
+      navigationOptions: {
+        tabBarVisible: false
+      }
+    },
     OnBoarding: {
       screen: OnBoarding,
       navigationOptions: {
@@ -98,30 +106,6 @@ export const OnBoardingStack = StackNavigator(
       }
     }
     
-  },
-  { headerMode: 'none', navigationOptions: { tabBarVisible: false } }
-);
-
-export const SettingStack = StackNavigator(
-  {
-    Setting: {
-      screen: SettingScreen,
-      navigationOptions: {
-        tabBarVisible: false
-      }
-    },
-    Bantuan: {
-      screen: BantuanScreen,
-      navigationOptions: {
-        tabBarVisible: false
-      }
-    },
-    Tentang: {
-      screen: TentangScreen,
-      navigationOptions: {
-        tabBarVisible: false
-      }
-    },
   },
   { headerMode: 'none', navigationOptions: { tabBarVisible: false } }
 );
@@ -167,6 +151,24 @@ export const BerandaStack = StackNavigator(
     },
     DetailMateri: {
       screen: DetailMateri,
+      navigationOptions: {
+        tabBarVisible: false
+      }
+    },
+    Setting: {
+      screen: SettingScreen,
+      navigationOptions: {
+        tabBarVisible: false
+      }
+    },
+    Bantuan: {
+      screen: BantuanScreen,
+      navigationOptions: {
+        tabBarVisible: false
+      }
+    },
+    Tentang: {
+      screen: TentangScreen,
       navigationOptions: {
         tabBarVisible: false
       }

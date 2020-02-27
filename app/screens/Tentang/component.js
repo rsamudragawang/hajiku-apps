@@ -13,8 +13,8 @@ export default class Lala extends Component {
         <ScrollView>
           <View style={Style.container}>
             <View style={Style.card}>
-              <Text style={Style.title}>Quiztod</Text>
-              <Text style={Style.desc}>Quiztod adalah aplikasi pembelajaran seni budaya di bidang Batik</Text>
+              <Text style={Style.title}>QuizQoeh</Text>
+              <Text style={Style.desc}>QuizQoeh adalah aplikasi pembelajaran Haji Dan Umrah</Text>
             </View>
             <View>
               <TouchableOpacity onPress={() => Linking.openURL('https://www.instagram.com/didikurniawan18/')}>
@@ -23,6 +23,14 @@ export default class Lala extends Component {
                   title="Rayhan Rafiud"
                   divisi="UI/UX Designer"
                   instagram="@rasadasf"
+                />
+              </TouchableOpacity>
+              <TouchableOpacity onPress={() => Linking.openURL('https://www.instagram.com/ganar.gatul/')}>
+                <Card
+                  icon1={<Image source={IMAGES.rz} resizeMode="contain" style={Style.nana} />}
+                  title="Ramadhani Samudra Gawang"
+                  divisi="Front End Developer"
+                  instagram="@ganar.gatul"
                 />
               </TouchableOpacity>
             </View>

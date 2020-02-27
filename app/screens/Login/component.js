@@ -35,6 +35,8 @@ export default class Component extends React.Component {
         const result = await ENDPOINT.login(params);
         if (result.code === 200) {
           await storage.set(STORAGE_KEY.TOKEN_LOGIN, result.token);
+          await storage.set(STORAGE_KEY.EMAIL, result.data.email);
+          await storage.set(STORAGE_KEY.NAME, result.data.fullname);
           console.log(STORAGE_KEY.TOKEN_LOGIN);
           Alert.alert(JSON.stringify(result.code), 'Succses');
           this.props.navigation.navigate('Beranda');
