@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 /* eslint-disable react/no-unused-state */
 /* eslint-disable no-return-assign */
 /* eslint-disable react-native/no-color-literals */
@@ -43,7 +44,7 @@ export default class Component extends React.Component {
     const getindex = params ? params.index : 'umroh';
     const result = await ENDPOINT.getById(getindex, getType);
     const replacelink = result.data.videoLink.slice(32, 43);
-    console.log(replacelink);
+    // console.log(replacelink);
     this.setState({
       title: result.data.title,
       desc: result.data.description,
@@ -123,7 +124,7 @@ export default class Component extends React.Component {
               }}
             >
               {this.state.subMateri.map((materi, index) => (
-                <View key={index}>
+                <View key={index} style={{ alignSelf: 'baseline' }}>
                   <TouchableOpacity style={styles.collapseProduct} onPress={() => this._showMateri(index)}>
                     <View style={styles.viewNumberList}>
                       <Text style={styles.listProductNomor}>{materi.id}</Text>

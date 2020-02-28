@@ -36,7 +36,8 @@ export default class Component extends React.Component {
       jawaban: [],
       jsonJawaban: [],
       modalVisible: false,
-      index: ''
+      index: '',
+      isQuiz: false
     };
     // this.swiper = new Swiper(props);
   }
@@ -50,15 +51,18 @@ export default class Component extends React.Component {
     this.setState({
       index: getindex,
       data: result.data.question,
-      time: result.data.time * 60
+      time: result.data.time * 60,
+      isQuiz: result.data.isQuiz
     });
   };
   _onTimeout = () => {
     const result = this.state.jsonJawaban;
     const index = this.state.index;
     const soal = this.state.data.length;
+    const isQuiz = this.state.isQuiz;
+    console.log(isQuiz);
     this.setState({ modalVisible: !this.state.modalVisible });
-    this.props.navigation.navigate('Score', { result, index, soal });
+    this.props.navigation.navigate('Score', { result, index, soal, isQuiz });
   };
   _setAnswer = (index, answer) => {
     if (this.state.jawaban.length === 0) {
@@ -181,12 +185,13 @@ export default class Component extends React.Component {
                 style={{
                   margin: 15,
                   width: scale(330),
-                  height: scale(80),
+                  // height: scale(80),
                   backgroundColor: '#fff',
                   padding: 15,
                   borderColor: '#EBEBEB',
                   borderWidth: 2,
-                  borderRadius: 5
+                  borderRadius: 5,
+                  alignSelf: 'baseline'
                 }}
               >
                 <Text
@@ -210,9 +215,9 @@ export default class Component extends React.Component {
                 <TouchableOpacity onPress={() => this._setAnswer(i, data[0])}>
                   <View
                     style={{
+                      alignSelf: 'baseline',
                       margin: 15,
                       width: scale(330),
-                      height: scale(50),
                       backgroundColor: '#FF4057',
                       padding: 15,
                       borderColor: '#EBEBEB',
@@ -239,6 +244,7 @@ export default class Component extends React.Component {
                 <TouchableOpacity onPress={() => this._setAnswer(i.toString(), data[0].toString())}>
                   <View
                     style={{
+                      alignSelf: 'baseline',
                       margin: 15,
                       width: scale(330),
                       backgroundColor: '#fff',
@@ -268,9 +274,9 @@ export default class Component extends React.Component {
                 <TouchableOpacity onPress={() => this._setAnswer(i, data[1])}>
                   <View
                     style={{
+                      alignSelf: 'baseline',
                       margin: 15,
                       width: scale(330),
-                      height: scale(50),
                       backgroundColor: '#FF4057',
                       padding: 15,
                       borderColor: '#EBEBEB',
@@ -297,6 +303,7 @@ export default class Component extends React.Component {
                 <TouchableOpacity onPress={() => this._setAnswer(i, data[1])}>
                   <View
                     style={{
+                      alignSelf: 'baseline',
                       margin: 15,
                       width: scale(330),
                       backgroundColor: '#fff',
@@ -326,9 +333,9 @@ export default class Component extends React.Component {
                 <TouchableOpacity onPress={() => this._setAnswer(i, data[2])}>
                   <View
                     style={{
+                      alignSelf: 'baseline',
                       margin: 15,
                       width: scale(330),
-                      height: scale(50),
                       backgroundColor: '#FF4057',
                       padding: 15,
                       borderColor: '#EBEBEB',
@@ -355,9 +362,9 @@ export default class Component extends React.Component {
                 <TouchableOpacity onPress={() => this._setAnswer(i, data[2])}>
                   <View
                     style={{
+                      alignSelf: 'baseline',
                       margin: 15,
                       width: scale(330),
-                      // height: scale(50),
                       backgroundColor: '#fff',
                       padding: 15,
                       borderColor: '#EBEBEB',
@@ -385,9 +392,9 @@ export default class Component extends React.Component {
                 <TouchableOpacity onPress={() => this._setAnswer(i, data[3])}>
                   <View
                     style={{
+                      alignSelf: 'baseline',
                       margin: 15,
                       width: scale(330),
-                      height: scale(50),
                       backgroundColor: '#FF4057',
                       padding: 15,
                       borderColor: '#EBEBEB',
@@ -414,6 +421,7 @@ export default class Component extends React.Component {
                 <TouchableOpacity onPress={() => this._setAnswer(i, data[3])}>
                   <View
                     style={{
+                      alignSelf: 'baseline',
                       margin: 15,
                       width: scale(330),
                       backgroundColor: '#fff',

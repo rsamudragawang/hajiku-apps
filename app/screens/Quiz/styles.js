@@ -1,3 +1,5 @@
+/* eslint-disable no-unused-vars */
+/* eslint-disable import/named */
 /* eslint-disable react-native/no-color-literals */
 import { StyleSheet } from 'react-native';
 import { COLOR_ONBOARDING_HEADER, COLOR_ONBOARDING_TEXT, COLOR_WHITE } from '../../styles';

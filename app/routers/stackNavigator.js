@@ -18,6 +18,8 @@ import TentangScreen from '../screens/Tentang';
 import BantuanScreen from '../screens/Bantuan';
 import Score from '../screens/Score';
 import SessionScreen from '../screens/SessionScreen';
+import Pembahasan from '../screens/Pembahasan';
+import SplashScreen from '../screens/SplashScreen';
 
 export const HomeStack = StackNavigator(
   {
@@ -87,6 +89,12 @@ export const OnBoardingStack = StackNavigator(
         tabBarVisible: false
       }
     },
+    SplashScreen: {
+      screen: SplashScreen,
+      navigationOptions: {
+        tabBarVisible: false
+      }
+    },
     OnBoarding: {
       screen: OnBoarding,
       navigationOptions: {
@@ -112,7 +120,6 @@ export const OnBoardingStack = StackNavigator(
 
 export const BerandaStack = StackNavigator(
   {
-    
     Beranda: {
       screen: Beranda,
       navigationOptions: {
@@ -127,6 +134,12 @@ export const BerandaStack = StackNavigator(
     }, 
     Quiz: {
       screen: Quiz,
+      navigationOptions: {
+        tabBarVisible: false
+      }
+    },
+    Pembahasan: {
+      screen: Pembahasan,
       navigationOptions: {
         tabBarVisible: false
       }

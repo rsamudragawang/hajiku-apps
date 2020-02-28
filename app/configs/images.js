@@ -2,7 +2,7 @@
 const images = {
   haji: require('../../assets/images/haji.png'),
   hiasan: require('../../assets/images/hiasan.png'),
-iconFb: require('../../assets/images/iconFB.png'),
+  iconFb: require('../../assets/images/iconFB.png'),
   iconWa: require('../../assets/images/iconWa.png'),
   logo: require('../../assets/images/logo.png'),
   menu: require('../../assets/images/menu.png')

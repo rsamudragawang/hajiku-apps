@@ -1,13 +1,10 @@
+/* eslint-disable prefer-destructuring */
+/* eslint-disable react/prop-types */
 /* eslint-disable react-native/no-color-literals */
 import React from 'react';
 import { View, Text, Image, TouchableOpacity } from 'react-native';
 import Share from 'react-native-share';
-import { BottomSheet } from 'react-native-btr';
-import MainScreen from '../../components/layouts/MainScreen';
-import Header from '../../components/elements/Header';
 import Button from '../../components/elements/Button';
-import Account from '../../../assets/svgs/Account';
-import styles from './styles';
 import { scale } from '../../utils/scaling';
 import { blue, white, red } from '../../styles/colors';
 import metrics from '../../constants/metrics';
@@ -21,7 +18,9 @@ export default class Component extends React.Component {
       nilai: 0,
       falseAnswer: 0,
       trueAnswer: 0,
-      soal: 5
+      soal: 5,
+      isQuiz: false,
+      index: ''
     };
   }
   componentDidMount() {
@@ -32,6 +31,8 @@ export default class Component extends React.Component {
     const getindex = params ? params.index : 'umroh';
     const answer = params ? params.result : 'bakaa';
     const soal = params ? params.soal : 'bakaa';
+    const isQuiz = params ? params.isQuiz : false;
+    // console.log(isQuiz);
     // this is fucking log
     // console.log(getindex);
     // const jawaban = `{answer: ${this.state.jawaban}}`;
@@ -46,11 +47,18 @@ export default class Component extends React.Component {
       soal,
       nilai: result.data.value,
       trueAnswer: result.data.trueAnswer,
-      falseAnswer: result.data.falseAnswer
+      falseAnswer: result.data.falseAnswer,
+      isQuiz,
+      index: getindex
     });
   };
   _onPress = () => {
     this.props.navigation.navigate('Beranda');
+  };
+
+  _toPembahasan = () => {
+    const index = this.state.index;
+    this.props.navigation.navigate('Pembahasan', { index });
   };
   _onPressShareWA = async () => {
     try {
@@ -61,7 +69,7 @@ export default class Component extends React.Component {
       };
       Share.shareSingle(shareOptions);
     } catch (error) {
-      alert(error.message);
+      // alert(error.message);
     }
   };
   _onPressShareFB = async () => {
@@ -73,7 +81,7 @@ export default class Component extends React.Component {
       };
       Share.shareSingle(shareOptions);
     } catch (error) {
-      alert(error.message);
+      // alert(error.message);
     }
   };
   render() {
@@ -163,21 +171,43 @@ export default class Component extends React.Component {
             padding: scale(24)
           }}
         >
-          <Text style={{ fontSize: 18, fontWeight: '800' }}>Yuk share ke temen-temen kamu</Text>
-          <View style={{ flexDirection: 'row', marginBottom: scale(43) }}>
-            <TouchableOpacity onPress={this._onPressShareWA} style={{ marginLeft: scale(17) }}>
-              <Image
-                style={{ width: scale(52), height: scale(50), marginTop: scale(16) }}
-                source={IMAGES.iconWa}
-              />
-            </TouchableOpacity>
-            <TouchableOpacity onPress={this._onPressShareFB} style={{ marginLeft: scale(17) }}>
-              <Image
-                style={{ width: scale(52), height: scale(50), marginTop: scale(16) }}
-                source={IMAGES.iconFb}
-              />
-            </TouchableOpacity>
-          </View>
+          {this.state.isQuiz ? (
+            <View>
+              <Text style={{ fontSize: 18, fontWeight: '800' }}>Yuk share ke temen-temen kamu</Text>
+              <View style={{ flexDirection: 'row', marginBottom: scale(43) }}>
+                <TouchableOpacity onPress={this._onPressShareWA} style={{ marginLeft: scale(17) }}>
+                  <Image
+                    style={{ width: scale(52), height: scale(50), marginTop: scale(16) }}
+                    source={IMAGES.iconWa}
+                  />
+                </TouchableOpacity>
+                <TouchableOpacity onPress={this._onPressShareFB} style={{ marginLeft: scale(17) }}>
+                  <Image
+                    style={{ width: scale(52), height: scale(50), marginTop: scale(16) }}
+                    source={IMAGES.iconFb}
+                  />
+                </TouchableOpacity>
+              </View>
+            </View>
+          ) : (
+            <View>
+              <View style={{ flexDirection: 'row', marginBottom: scale(43) }}>
+                <Button
+                  customContainer={{
+                    height: 50,
+                    width: scale(300),
+                    backgroundColor: '#fff',
+                    borderWidth: 1,
+                    borderColor: this.state.nilai > 50 ? '#5D7DFF' : '#FF4057'
+                  }}
+                  title="Lihat Pembahasan"
+                  customText={{ color: this.state.nilai > 50 ? '#5D7DFF' : '#FF4057' }}
+                  onPress={this._toPembahasan}
+                />
+              </View>
+            </View>
+          )}
+
           <Button
             customContainer={{
               height: 50,

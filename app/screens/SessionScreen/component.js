@@ -17,7 +17,7 @@ export default class Component extends React.Component {
       // this.props.navigation.navigate('Menu', { category: 'Drink' });
       this.props.navigation.navigate('Beranda');
     } else {
-      this.props.navigation.navigate('OnBoarding');
+      this.props.navigation.navigate('SplashScreen');
     }
   };
 
