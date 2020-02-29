@@ -5,6 +5,7 @@
 	};
 	objectVersion = 46;
 	objects = {
+
 /* Begin PBXBuildFile section */
 		00C302E51ABCBA2D00DB3ED1 /* libRCTActionSheet.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 00C302AC1ABCB8CE00DB3ED1 /* libRCTActionSheet.a */; };
 		00C302E71ABCBA2D00DB3ED1 /* libRCTGeolocation.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 00C302BA1ABCB90400DB3ED1 /* libRCTGeolocation.a */; };
@@ -37,7 +38,6 @@
 		2DF0FFEE2056DD460020B375 /* libReact.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3DAD3EA31DF850E9000B6D8A /* libReact.a */; };
 		3A01B13FBDFF454391203C98 /* libRNI18n-tvOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B6C91989BC294E0CA178C66D /* libRNI18n-tvOS.a */; };
 		664935C0FABD4D0DA4C59A36 /* libRNFetchBlob.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A4A71F50F2314BBB94AE0CAF /* libRNFetchBlob.a */; };
-		7D8CD39F86914F6AB197FD31 /* libRNSVG-tvOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 63B119C526C846D88489CB71 /* libRNSVG-tvOS.a */; };
 		832341BD1AAA6AB300B99B32 /* libRCTText.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 832341B51AAA6A8300B99B32 /* libRCTText.a */; };
 		87B61114A15C40A5A767E0DC /* libRNI18n.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BDC5325A5EB741B2B0F11E07 /* libRNI18n.a */; };
 		ADBDB9381DFEBF1600ED6528 /* libRCTBlob.a in Frameworks */ = {isa = PBXBuildFile; fileRef = ADBDB9271DFEBF0700ED6528 /* libRCTBlob.a */; };
@@ -45,9 +45,7 @@
 		B76AD42B219B5AAB0090EFE4 /* Quicksand-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B76AD427219B5AAB0090EFE4 /* Quicksand-Light.ttf */; };
 		B76AD42C219B5AAB0090EFE4 /* Quicksand-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B76AD428219B5AAB0090EFE4 /* Quicksand-Regular.ttf */; };
 		B76AD42D219B5AAB0090EFE4 /* Quicksand-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B76AD429219B5AAB0090EFE4 /* Quicksand-Bold.ttf */; };
-		E9B70ACEA4E34048AC2C84B3 /* libRNSVG.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3B9CE30A45DD466DA560EE21 /* libRNSVG.a */; };
 		48C10AB8A16D4A448947B9EC /* libRCTVideo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 120135B720AB40EB8891EFE7 /* libRCTVideo.a */; };
-		213A93837FAC4B0886545655 /* libRCTYouTube.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0171026030544718AB959F5E /* libRCTYouTube.a */; };
 		0CC883425A364034BAF56CB2 /* libRNShare.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D3B095AB00C14F7A88BF2BA6 /* libRNShare.a */; };
 		4C29D0C5EFF84BE6B884CA33 /* Montserrat-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CAD07EB35C4E43A0AFE6B89B /* Montserrat-Black.ttf */; };
 		5B63AEF671DF42C0A4EFE3A7 /* Montserrat-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7FCC949A9AD443188859E1C6 /* Montserrat-Bold.ttf */; };
@@ -58,6 +56,9 @@
 		473CE64F85E84E5C9B25BD95 /* Montserrat-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A1B0AA71FF6E4C67B8C7BBB3 /* Montserrat-Regular.ttf */; };
 		5DF5195B96964E7C8A9CA697 /* Montserrat-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2D046F7B847F4B69A4E43F0E /* Montserrat-SemiBold.ttf */; };
 		2B189E3E871F4F739E31A1EC /* Montserrat-Thin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E1A3C18E114945358C89A73F /* Montserrat-Thin.ttf */; };
+		7E4318F5B58243F1BC34459B /* libRNSVG.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 31B8650C5F754F27B5675D95 /* libRNSVG.a */; };
+		8F1812DF93B343CC861F2217 /* libRNSVG-tvOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CA29250C81A84460AA5C2D7B /* libRNSVG-tvOS.a */; };
+		7E7BCE46970B449285D60E4A /* libRCTYouTube.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C6D9D6255FB4F8DBF6A92F5 /* libRCTYouTube.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -334,20 +335,6 @@
 			remoteGlobalIDString = 358F4ED71D1E81A9004DF814;
 			remoteInfo = RCTBlob;
 		};
-		B71F65FF2197D58A0050866E /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 50E6AA08211D4609A0CC4117 /* RNSVG.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 0CF68AC11AF0540F00FF9E5C;
-			remoteInfo = RNSVG;
-		};
-		B71F66012197D58A0050866E /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 50E6AA08211D4609A0CC4117 /* RNSVG.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 94DDAC5C1F3D024300EED511;
-			remoteInfo = "RNSVG-tvOS";
-		};
 		B71F663B2198486A0050866E /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 6A968F28D9B040239F52D8D9 /* RNI18n.xcodeproj */;
@@ -394,10 +381,7 @@
 		2D02E47B1E0B4A5D006451C7 /* Hajiku-tvOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Hajiku-tvOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2D02E4901E0B4A5D006451C7 /* Hajiku-tvOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Hajiku-tvOSTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2D16E6891FA4F8E400B85C8A /* libReact.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libReact.a; sourceTree = BUILT_PRODUCTS_DIR; };
-		3B9CE30A45DD466DA560EE21 /* libRNSVG.a */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = archive.ar; path = libRNSVG.a; sourceTree = "<group>"; };
-		50E6AA08211D4609A0CC4117 /* RNSVG.xcodeproj */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = "wrapper.pb-project"; name = RNSVG.xcodeproj; path = "../node_modules/react-native-svg/ios/RNSVG.xcodeproj"; sourceTree = "<group>"; };
 		5E91572D1DD0AC6500FF2AA8 /* RCTAnimation.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTAnimation.xcodeproj; path = "../node_modules/react-native/Libraries/NativeAnimation/RCTAnimation.xcodeproj"; sourceTree = "<group>"; };
-		63B119C526C846D88489CB71 /* libRNSVG-tvOS.a */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = archive.ar; path = "libRNSVG-tvOS.a"; sourceTree = "<group>"; };
 		6A968F28D9B040239F52D8D9 /* RNI18n.xcodeproj */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = "wrapper.pb-project"; name = RNI18n.xcodeproj; path = "../node_modules/react-native-i18n/ios/RNI18n.xcodeproj"; sourceTree = "<group>"; };
 		78C398B01ACF4ADC00677621 /* RCTLinking.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTLinking.xcodeproj; path = "../node_modules/react-native/Libraries/LinkingIOS/RCTLinking.xcodeproj"; sourceTree = "<group>"; };
 		79099FA954A64CF5AE28594D /* RNFetchBlob.xcodeproj */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = "wrapper.pb-project"; name = RNFetchBlob.xcodeproj; path = "../node_modules/rn-fetch-blob/ios/RNFetchBlob.xcodeproj"; sourceTree = "<group>"; };
@@ -412,8 +396,6 @@
 		BDC5325A5EB741B2B0F11E07 /* libRNI18n.a */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = archive.ar; path = libRNI18n.a; sourceTree = "<group>"; };
 		05E25FECEDA0424BB2FB894C /* RCTVideo.xcodeproj */ = {isa = PBXFileReference; name = "RCTVideo.xcodeproj"; path = "../node_modules/react-native-video/ios/RCTVideo.xcodeproj"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = wrapper.pb-project; explicitFileType = undefined; includeInIndex = 0; };
 		120135B720AB40EB8891EFE7 /* libRCTVideo.a */ = {isa = PBXFileReference; name = "libRCTVideo.a"; path = "libRCTVideo.a"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = archive.ar; explicitFileType = undefined; includeInIndex = 0; };
-		70275A3F789E4BF6BD1C0D50 /* RCTYouTube.xcodeproj */ = {isa = PBXFileReference; name = "RCTYouTube.xcodeproj"; path = "../node_modules/react-native-youtube/RCTYouTube.xcodeproj"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = wrapper.pb-project; explicitFileType = undefined; includeInIndex = 0; };
-		0171026030544718AB959F5E /* libRCTYouTube.a */ = {isa = PBXFileReference; name = "libRCTYouTube.a"; path = "libRCTYouTube.a"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = archive.ar; explicitFileType = undefined; includeInIndex = 0; };
 		45661E1FD0AC4C258E8B8D10 /* RNShare.xcodeproj */ = {isa = PBXFileReference; name = "RNShare.xcodeproj"; path = "../node_modules/react-native-share/ios/RNShare.xcodeproj"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = wrapper.pb-project; explicitFileType = undefined; includeInIndex = 0; };
 		D3B095AB00C14F7A88BF2BA6 /* libRNShare.a */ = {isa = PBXFileReference; name = "libRNShare.a"; path = "libRNShare.a"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = archive.ar; explicitFileType = undefined; includeInIndex = 0; };
 		CAD07EB35C4E43A0AFE6B89B /* Montserrat-Black.ttf */ = {isa = PBXFileReference; name = "Montserrat-Black.ttf"; path = "../assets/fonts/Montserrat-Black.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
@@ -425,6 +407,11 @@
 		A1B0AA71FF6E4C67B8C7BBB3 /* Montserrat-Regular.ttf */ = {isa = PBXFileReference; name = "Montserrat-Regular.ttf"; path = "../assets/fonts/Montserrat-Regular.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 		2D046F7B847F4B69A4E43F0E /* Montserrat-SemiBold.ttf */ = {isa = PBXFileReference; name = "Montserrat-SemiBold.ttf"; path = "../assets/fonts/Montserrat-SemiBold.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 		E1A3C18E114945358C89A73F /* Montserrat-Thin.ttf */ = {isa = PBXFileReference; name = "Montserrat-Thin.ttf"; path = "../assets/fonts/Montserrat-Thin.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		DE48B1A8883147D5B9BF80AB /* RNSVG.xcodeproj */ = {isa = PBXFileReference; name = "RNSVG.xcodeproj"; path = "../node_modules/react-native-svg/ios/RNSVG.xcodeproj"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = wrapper.pb-project; explicitFileType = undefined; includeInIndex = 0; };
+		31B8650C5F754F27B5675D95 /* libRNSVG.a */ = {isa = PBXFileReference; name = "libRNSVG.a"; path = "libRNSVG.a"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = archive.ar; explicitFileType = undefined; includeInIndex = 0; };
+		CA29250C81A84460AA5C2D7B /* libRNSVG-tvOS.a */ = {isa = PBXFileReference; name = "libRNSVG-tvOS.a"; path = "libRNSVG-tvOS.a"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = archive.ar; explicitFileType = undefined; includeInIndex = 0; };
+		11DBF1EF951D4660997E6452 /* RCTYouTube.xcodeproj */ = {isa = PBXFileReference; name = "RCTYouTube.xcodeproj"; path = "../node_modules/react-native-youtube/RCTYouTube.xcodeproj"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = wrapper.pb-project; explicitFileType = undefined; includeInIndex = 0; };
+		2C6D9D6255FB4F8DBF6A92F5 /* libRCTYouTube.a */ = {isa = PBXFileReference; name = "libRCTYouTube.a"; path = "libRCTYouTube.a"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = archive.ar; explicitFileType = undefined; includeInIndex = 0; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -452,12 +439,12 @@
 				832341BD1AAA6AB300B99B32 /* libRCTText.a in Frameworks */,
 				00C302EA1ABCBA2D00DB3ED1 /* libRCTVibration.a in Frameworks */,
 				139FDEF61B0652A700C62182 /* libRCTWebSocket.a in Frameworks */,
-				E9B70ACEA4E34048AC2C84B3 /* libRNSVG.a in Frameworks */,
 				87B61114A15C40A5A767E0DC /* libRNI18n.a in Frameworks */,
 				664935C0FABD4D0DA4C59A36 /* libRNFetchBlob.a in Frameworks */,
 				48C10AB8A16D4A448947B9EC /* libRCTVideo.a in Frameworks */,
-				213A93837FAC4B0886545655 /* libRCTYouTube.a in Frameworks */,
 				0CC883425A364034BAF56CB2 /* libRNShare.a in Frameworks */,
+				7E4318F5B58243F1BC34459B /* libRNSVG.a in Frameworks */,
+				7E7BCE46970B449285D60E4A /* libRCTYouTube.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -475,6 +462,9 @@
 				2D02E4C81E0B4AEC006451C7 /* libRCTWebSocket-tvOS.a in Frameworks */,
 				7D8CD39F86914F6AB197FD31 /* libRNSVG-tvOS.a in Frameworks */,
 				3A01B13FBDFF454391203C98 /* libRNI18n-tvOS.a in Frameworks */,
+				96317243B295482EA69728D5 /* libRNSVG-tvOS.a in Frameworks */,
+				F1E5A1C56D8D447A9E19B7C8 /* libRNSVG-tvOS.a in Frameworks */,
+				8F1812DF93B343CC861F2217 /* libRNSVG-tvOS.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -647,12 +637,12 @@
 				832341B01AAA6A8300B99B32 /* RCTText.xcodeproj */,
 				00C302DF1ABCB9EE00DB3ED1 /* RCTVibration.xcodeproj */,
 				139FDEE61B06529A00C62182 /* RCTWebSocket.xcodeproj */,
-				50E6AA08211D4609A0CC4117 /* RNSVG.xcodeproj */,
 				6A968F28D9B040239F52D8D9 /* RNI18n.xcodeproj */,
 				79099FA954A64CF5AE28594D /* RNFetchBlob.xcodeproj */,
 				05E25FECEDA0424BB2FB894C /* RCTVideo.xcodeproj */,
-				70275A3F789E4BF6BD1C0D50 /* RCTYouTube.xcodeproj */,
 				45661E1FD0AC4C258E8B8D10 /* RNShare.xcodeproj */,
+				DE48B1A8883147D5B9BF80AB /* RNSVG.xcodeproj */,
+				11DBF1EF951D4660997E6452 /* RCTYouTube.xcodeproj */,
 			);
 			name = Libraries;
 			sourceTree = "<group>";
@@ -712,15 +702,6 @@
 				A4A71F50F2314BBB94AE0CAF /* libRNFetchBlob.a */,
 			);
 			name = "Recovered References";
-			sourceTree = "<group>";
-		};
-		B71F65FB2197D58A0050866E /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				B71F66002197D58A0050866E /* libRNSVG.a */,
-				B71F66022197D58A0050866E /* libRNSVG-tvOS.a */,
-			);
-			name = Products;
 			sourceTree = "<group>";
 		};
 		B71F66372198486A0050866E /* Products */ = {
@@ -934,10 +915,6 @@
 				{
 					ProductGroup = B71F66372198486A0050866E /* Products */;
 					ProjectRef = 6A968F28D9B040239F52D8D9 /* RNI18n.xcodeproj */;
-				},
-				{
-					ProductGroup = B71F65FB2197D58A0050866E /* Products */;
-					ProjectRef = 50E6AA08211D4609A0CC4117 /* RNSVG.xcodeproj */;
 				},
 			);
 			projectRoot = "";
@@ -1210,13 +1187,6 @@
 			remoteRef = ADBDB9261DFEBF0700ED6528 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		B71F66002197D58A0050866E /* libRNSVG.a */ = {
-			isa = PBXReferenceProxy;
-			fileType = archive.ar;
-			path = libRNSVG.a;
-			remoteRef = B71F65FF2197D58A0050866E /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
 		B71F66022197D58A0050866E /* libRNSVG-tvOS.a */ = {
 			isa = PBXReferenceProxy;
 			fileType = archive.ar;
@@ -1398,21 +1368,19 @@
 				);
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
-					"$(SRCROOT)/../node_modules/react-native-svg/ios/**",
 					"$(SRCROOT)/../node_modules/react-native-i18n/ios",
 					"$(SRCROOT)..\node_modules\nn-fetch-blobios/**",
 					"$(SRCROOT)/../node_modules/react-native-video/ios/**",
 					"$(SRCROOT)/../node_modules/react-native-youtube/**",
 					"$(SRCROOT)/../node_modules/react-native-share/ios",
+					"$(SRCROOT)/../node_modules/react-native-svg/ios/**",
+					"$(SRCROOT)/../node_modules/react-native-youtube",
 				);
 				INFOPLIST_FILE = HajikuTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
-					"\"$(SRCROOT)/$(TARGET_NAME)\"",
-					"\"$(SRCROOT)/$(TARGET_NAME)\"",
-					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 				);
 				OTHER_LDFLAGS = (
@@ -1432,21 +1400,19 @@
 				COPY_PHASE_STRIP = NO;
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
-					"$(SRCROOT)/../node_modules/react-native-svg/ios/**",
 					"$(SRCROOT)/../node_modules/react-native-i18n/ios",
 					"$(SRCROOT)..\node_modules\nn-fetch-blobios/**",
 					"$(SRCROOT)/../node_modules/react-native-video/ios/**",
 					"$(SRCROOT)/../node_modules/react-native-youtube/**",
 					"$(SRCROOT)/../node_modules/react-native-share/ios",
+					"$(SRCROOT)/../node_modules/react-native-svg/ios/**",
+					"$(SRCROOT)/../node_modules/react-native-youtube",
 				);
 				INFOPLIST_FILE = HajikuTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
-					"\"$(SRCROOT)/$(TARGET_NAME)\"",
-					"\"$(SRCROOT)/$(TARGET_NAME)\"",
-					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 				);
 				OTHER_LDFLAGS = (
@@ -1467,12 +1433,13 @@
 				DEAD_CODE_STRIPPING = NO;
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
-					"$(SRCROOT)/../node_modules/react-native-svg/ios/**",
 					"$(SRCROOT)/../node_modules/react-native-i18n/ios",
 					"$(SRCROOT)..\node_modules\nn-fetch-blobios/**",
 					"$(SRCROOT)/../node_modules/react-native-video/ios/**",
 					"$(SRCROOT)/../node_modules/react-native-youtube/**",
 					"$(SRCROOT)/../node_modules/react-native-share/ios",
+					"$(SRCROOT)/../node_modules/react-native-svg/ios/**",
+					"$(SRCROOT)/../node_modules/react-native-youtube",
 				);
 				INFOPLIST_FILE = Hajiku/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -1494,12 +1461,13 @@
 				CURRENT_PROJECT_VERSION = 1;
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
-					"$(SRCROOT)/../node_modules/react-native-svg/ios/**",
 					"$(SRCROOT)/../node_modules/react-native-i18n/ios",
 					"$(SRCROOT)..\node_modules\nn-fetch-blobios/**",
 					"$(SRCROOT)/../node_modules/react-native-video/ios/**",
 					"$(SRCROOT)/../node_modules/react-native-youtube/**",
 					"$(SRCROOT)/../node_modules/react-native-share/ios",
+					"$(SRCROOT)/../node_modules/react-native-svg/ios/**",
+					"$(SRCROOT)/../node_modules/react-native-youtube",
 				);
 				INFOPLIST_FILE = Hajiku/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -1528,20 +1496,18 @@
 				GCC_NO_COMMON_BLOCKS = YES;
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
-					"$(SRCROOT)/../node_modules/react-native-svg/ios/**",
 					"$(SRCROOT)/../node_modules/react-native-i18n/ios",
 					"$(SRCROOT)..\node_modules\nn-fetch-blobios/**",
 					"$(SRCROOT)/../node_modules/react-native-video/ios/**",
 					"$(SRCROOT)/../node_modules/react-native-youtube/**",
 					"$(SRCROOT)/../node_modules/react-native-share/ios",
+					"$(SRCROOT)/../node_modules/react-native-svg/ios/**",
+					"$(SRCROOT)/../node_modules/react-native-youtube",
 				);
 				INFOPLIST_FILE = "Hajiku-tvOS/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
-					"\"$(SRCROOT)/$(TARGET_NAME)\"",
-					"\"$(SRCROOT)/$(TARGET_NAME)\"",
-					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 				);
 				OTHER_LDFLAGS = (
@@ -1570,20 +1536,18 @@
 				GCC_NO_COMMON_BLOCKS = YES;
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
-					"$(SRCROOT)/../node_modules/react-native-svg/ios/**",
 					"$(SRCROOT)/../node_modules/react-native-i18n/ios",
 					"$(SRCROOT)..\node_modules\nn-fetch-blobios/**",
 					"$(SRCROOT)/../node_modules/react-native-video/ios/**",
 					"$(SRCROOT)/../node_modules/react-native-youtube/**",
 					"$(SRCROOT)/../node_modules/react-native-share/ios",
+					"$(SRCROOT)/../node_modules/react-native-svg/ios/**",
+					"$(SRCROOT)/../node_modules/react-native-youtube",
 				);
 				INFOPLIST_FILE = "Hajiku-tvOS/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
-					"\"$(SRCROOT)/$(TARGET_NAME)\"",
-					"\"$(SRCROOT)/$(TARGET_NAME)\"",
-					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 				);
 				OTHER_LDFLAGS = (
@@ -1611,20 +1575,18 @@
 				GCC_NO_COMMON_BLOCKS = YES;
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
-					"$(SRCROOT)/../node_modules/react-native-svg/ios/**",
 					"$(SRCROOT)/../node_modules/react-native-i18n/ios",
 					"$(SRCROOT)..\node_modules\nn-fetch-blobios/**",
 					"$(SRCROOT)/../node_modules/react-native-video/ios/**",
 					"$(SRCROOT)/../node_modules/react-native-youtube/**",
 					"$(SRCROOT)/../node_modules/react-native-share/ios",
+					"$(SRCROOT)/../node_modules/react-native-svg/ios/**",
+					"$(SRCROOT)/../node_modules/react-native-youtube",
 				);
 				INFOPLIST_FILE = "Hajiku-tvOSTests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
-					"\"$(SRCROOT)/$(TARGET_NAME)\"",
-					"\"$(SRCROOT)/$(TARGET_NAME)\"",
-					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 				);
 				OTHER_LDFLAGS = (
@@ -1652,20 +1614,18 @@
 				GCC_NO_COMMON_BLOCKS = YES;
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
-					"$(SRCROOT)/../node_modules/react-native-svg/ios/**",
 					"$(SRCROOT)/../node_modules/react-native-i18n/ios",
 					"$(SRCROOT)..\node_modules\nn-fetch-blobios/**",
 					"$(SRCROOT)/../node_modules/react-native-video/ios/**",
 					"$(SRCROOT)/../node_modules/react-native-youtube/**",
 					"$(SRCROOT)/../node_modules/react-native-share/ios",
+					"$(SRCROOT)/../node_modules/react-native-svg/ios/**",
+					"$(SRCROOT)/../node_modules/react-native-youtube",
 				);
 				INFOPLIST_FILE = "Hajiku-tvOSTests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
-					"\"$(SRCROOT)/$(TARGET_NAME)\"",
-					"\"$(SRCROOT)/$(TARGET_NAME)\"",
-					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 				);
 				OTHER_LDFLAGS = (
