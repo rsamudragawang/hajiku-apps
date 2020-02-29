@@ -96,9 +96,18 @@ def enableProguardInReleaseBuilds = false
 android {
     compileSdkVersion rootProject.ext.compileSdkVersion
     buildToolsVersion rootProject.ext.buildToolsVersion
-
+    signingConfigs {
+        release {
+        
+        }
+    }
+    buildTypes {
+        release {
+        signingConfig signingConfigs.release
+        }
+    }
     defaultConfig {
-        applicationId "com.kkempat.quizqoeh"
+        applicationId "com.smktelkom.hajiku"
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion
         versionCode 1

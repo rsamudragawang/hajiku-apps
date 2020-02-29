@@ -38,7 +38,7 @@ export default class Component extends React.Component {
           await storage.set(STORAGE_KEY.EMAIL, result.data.email);
           await storage.set(STORAGE_KEY.NAME, result.data.fullname);
           console.log(STORAGE_KEY.TOKEN_LOGIN);
-          Alert.alert(JSON.stringify(result.code), 'Succses');
+          // Alert.alert(JSON.stringify(result.code), 'Succses');
           this.props.navigation.navigate('Beranda');
         } else {
           ToastAndroid.show('Failed to Login', ToastAndroid.SHORT);

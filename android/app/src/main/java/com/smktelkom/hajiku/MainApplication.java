@@ -1,4 +1,4 @@
-package com.kkempat.quizqoeh;
+package com.smktelkom.hajiku;
 
 import android.app.Application;
 

@@ -78,7 +78,7 @@ export default class Component extends React.Component {
               </TouchableOpacity>
             </View>
           </ImageBackground>
-          <View style={{ flexDirection: 'row', marginLeft: scale(15) }}>
+          <View style={{ flexDirection: 'row', marginLeft: scale(15), marginTop: scale(35) }}>
             <TouchableOpacity onPress={() => this._toQuiz()}>
               <View style={styles.cardQuiz}>
                 <View style={{ marginTop: scale(15), marginLeft: scale(15), marginBottom: scale(8) }}>

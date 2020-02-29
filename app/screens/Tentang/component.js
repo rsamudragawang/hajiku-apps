@@ -13,11 +13,11 @@ export default class Lala extends Component {
         <ScrollView>
           <View style={Style.container}>
             <View style={Style.card}>
-              <Text style={Style.title}>QuizQoeh</Text>
-              <Text style={Style.desc}>QuizQoeh adalah aplikasi pembelajaran Haji Dan Umrah</Text>
+              <Text style={Style.title}>Hajiku</Text>
+              <Text style={Style.desc}>Hajiku adalah aplikasi pembelajaran Haji Dan Umrah</Text>
             </View>
             <View>
-              <TouchableOpacity onPress={() => Linking.openURL('https://www.instagram.com/didikurniawan18/')}>
+              <TouchableOpacity onPress={() => Linking.openURL('https://www.instagram.com/rafiudd_/')}>
                 <Card
                   icon1={<Image source={IMAGES.rz} resizeMode="contain" style={Style.nana} />}
                   title="Rayhan Rafiud"
@@ -33,8 +33,16 @@ export default class Lala extends Component {
                   instagram="@ganar.gatul"
                 />
               </TouchableOpacity>
+              <TouchableOpacity onPress={() => Linking.openURL('https://www.instagram.com/najib.ja_/')}>
+                <Card
+                  icon1={<Image source={IMAGES.rz} resizeMode="contain" style={Style.nana} />}
+                  title="Najib Jamil Abdurrahman"
+                  divisi="UI/UX Designer"
+                  instagram="@najib.ja_"
+                />
+              </TouchableOpacity>
             </View>
-            <Text style={Style.cp}>© 2020. Quiztod - All Right Reserved</Text>
+            <Text style={Style.cp}>© 2020. Hajiku - All Right Reserved</Text>
           </View>
         </ScrollView>
       </View>
