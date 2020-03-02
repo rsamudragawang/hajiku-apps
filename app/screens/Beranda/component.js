@@ -31,7 +31,9 @@ export default class Component extends React.Component {
   };
   _getData = async () => {
     const result = await ENDPOINT.getAll('discover');
-    const name = await storage.get(STORAGE_KEY.NAME);
+    const nameStorage = await storage.get(STORAGE_KEY.NAME);
+    const split = nameStorage.split(' ');
+    const name = split[0];
     this.setState({ data: result.data, name });
   };
   _onPress = () => {};
@@ -78,7 +80,7 @@ export default class Component extends React.Component {
               </TouchableOpacity>
             </View>
           </ImageBackground>
-          <View style={{ flexDirection: 'row', marginLeft: scale(15), marginTop: scale(35) }}>
+          <View style={{ flexDirection: 'row', marginLeft: scale(15) }}>
             <TouchableOpacity onPress={() => this._toQuiz()}>
               <View style={styles.cardQuiz}>
                 <View style={{ marginTop: scale(15), marginLeft: scale(15), marginBottom: scale(8) }}>
@@ -103,7 +105,7 @@ export default class Component extends React.Component {
               </TouchableOpacity>
             </View>
           </View>
-          <Text style={styles.discover}>Discover Quizqoeh</Text>
+          <Text style={styles.discover}>Discover Hajiku</Text>
           {this.state.data.map((data, index) => (
             <View key={index} style={{ marginBottom: scale(8) }}>
               <TouchableOpacity onPress={() => this._toDetail(data._id, data.tag)}>

@@ -17,20 +17,20 @@ export default class Lala extends Component {
               <Text style={Style.desc}>Hajiku adalah aplikasi pembelajaran Haji Dan Umrah</Text>
             </View>
             <View>
+              <TouchableOpacity onPress={() => Linking.openURL('https://www.instagram.com/ganar.gatul/')}>
+                <Card
+                  icon1={<Image source={IMAGES.rz} resizeMode="contain" style={Style.nana} />}
+                  title="Samudra Gawang"
+                  divisi="Front End Developer"
+                  instagram="@ganar.gatul"
+                />
+              </TouchableOpacity>
               <TouchableOpacity onPress={() => Linking.openURL('https://www.instagram.com/rafiudd_/')}>
                 <Card
                   icon1={<Image source={IMAGES.rz} resizeMode="contain" style={Style.nana} />}
                   title="Rayhan Rafiud"
-                  divisi="UI/UX Designer"
+                  divisi="Backend Developer"
                   instagram="@rasadasf"
-                />
-              </TouchableOpacity>
-              <TouchableOpacity onPress={() => Linking.openURL('https://www.instagram.com/ganar.gatul/')}>
-                <Card
-                  icon1={<Image source={IMAGES.rz} resizeMode="contain" style={Style.nana} />}
-                  title="Ramadhani Samudra Gawang"
-                  divisi="Front End Developer"
-                  instagram="@ganar.gatul"
                 />
               </TouchableOpacity>
               <TouchableOpacity onPress={() => Linking.openURL('https://www.instagram.com/najib.ja_/')}>
@@ -39,6 +39,22 @@ export default class Lala extends Component {
                   title="Najib Jamil Abdurrahman"
                   divisi="UI/UX Designer"
                   instagram="@najib.ja_"
+                />
+              </TouchableOpacity>
+              <TouchableOpacity onPress={() => Linking.openURL('https://www.instagram.com/luthfikaaa__/')}>
+                <Card
+                  icon1={<Image source={IMAGES.rz} resizeMode="contain" style={Style.nana} />}
+                  title="Luthfika Anggit"
+                  divisi="UI/UX Designer"
+                  instagram="@luthfikaaa__"
+                />
+              </TouchableOpacity>
+              <TouchableOpacity onPress={() => Linking.openURL('https://www.instagram.com/syaifulanw_/')}>
+                <Card
+                  icon1={<Image source={IMAGES.rz} resizeMode="contain" style={Style.nana} />}
+                  title="Syaiful Anwar"
+                  divisi="UI/UX Designer"
+                  instagram="@luthfikaaa__"
                 />
               </TouchableOpacity>
             </View>

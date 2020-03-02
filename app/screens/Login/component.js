@@ -33,6 +33,7 @@ export default class Component extends React.Component {
     } else {
       try {
         const result = await ENDPOINT.login(params);
+        ToastAndroid.show('Please Wait', ToastAndroid.SHORT);
         if (result.code === 200) {
           await storage.set(STORAGE_KEY.TOKEN_LOGIN, result.token);
           await storage.set(STORAGE_KEY.EMAIL, result.data.email);

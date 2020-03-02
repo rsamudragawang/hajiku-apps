@@ -426,10 +426,7 @@ export default class Component extends React.Component {
                 <View style={{ alignSelf: 'baseline' }}>
                   <TouchableOpacity style={styles.styles.collapseProduct}>
                     <View style={styles.styles.viewNumberList}>
-                      <Text style={styles.styles.listProductNomor}>{i + 1}</Text>
-                    </View>
-                    <View style={styles.styles.viewTxtList}>
-                      <Text style={styles.styles.listProductTitle}>Pembahasan</Text>
+                      <Text style={styles.styles.listProductNomor}>Pembahasan</Text>
                     </View>
                   </TouchableOpacity>
                   {/* {this.state.index === index ? ( */}

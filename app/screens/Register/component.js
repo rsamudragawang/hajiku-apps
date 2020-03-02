@@ -33,9 +33,9 @@ export default class Component extends React.Component {
     } else {
       try {
         const result = await ENDPOINT.register(params);
-
-        if (result.code === 200) {
-          Alert.alert(JSON.stringify(result.code), 'Succses');
+        ToastAndroid.show('Please Wait', ToastAndroid.SHORT);
+        if (result.code === 201) {
+          ToastAndroid.show('Sucsess to Register', ToastAndroid.SHORT);
           this.props.navigation.navigate('Login');
         } else {
           ToastAndroid.show('Failed to Register', ToastAndroid.SHORT);
