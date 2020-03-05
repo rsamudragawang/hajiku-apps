@@ -1,6 +1,6 @@
 /* eslint-disable react-native/no-color-literals */
 import React from 'react';
-import { View, Text, Image, ImageBackground, ScrollView, TouchableOpacity } from 'react-native';
+import { View, Text, Image, ImageBackground, ScrollView, TouchableOpacity, StatusBar } from 'react-native';
 import PropTypes from 'prop-types';
 import Header from '../../components/elements/Header';
 import styles from './styles';
@@ -20,6 +20,7 @@ export default class Component extends React.Component {
     this._getparams();
   }
   _getparams = async () => {
+    StatusBar.setHidden(false);
     const { params } = this.props.navigation.state;
     const getType = params ? params.type : 'umroh';
     const result = await ENDPOINT.getAll(getType);

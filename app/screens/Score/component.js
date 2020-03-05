@@ -2,7 +2,7 @@
 /* eslint-disable react/prop-types */
 /* eslint-disable react-native/no-color-literals */
 import React from 'react';
-import { View, Text, Image, TouchableOpacity } from 'react-native';
+import { View, Text, Image, TouchableOpacity, StatusBar } from 'react-native';
 import Share from 'react-native-share';
 import Button from '../../components/elements/Button';
 import { scale } from '../../utils/scaling';
@@ -27,21 +27,12 @@ export default class Component extends React.Component {
     this._getparams();
   }
   _getparams = async () => {
+    StatusBar.setHidden(false);
     const { params } = this.props.navigation.state;
     const getindex = params ? params.index : 'umroh';
     const answer = params ? params.result : 'bakaa';
     const soal = params ? params.soal : 'bakaa';
     const isQuiz = params ? params.isQuiz : false;
-    // console.log(isQuiz);
-    // this is fucking log
-    // console.log(getindex);
-    // const jawaban = `{answer: ${this.state.jawaban}}`;
-    // console.log(answer)
-    // console.log(JSON.stringify(answer));
-    // console.log(JSON.parse(answer));
-    // const jsonanswer = await JSON.stringify(answer);
-    // console.log(jsonanswer)
-    // console.log(result);
     const result = await ENDPOINT.getNilai(getindex, answer);
     this.setState({
       soal,
@@ -64,7 +55,9 @@ export default class Component extends React.Component {
     try {
       const shareOptions = {
         title: 'Share via',
-        message: `Can You Beat My Score ? This is my score :  ${this.state.nilai}`,
+        message: `Can You Beat My Score ? This is my score :  ${
+          this.state.nilai
+        } \n Beat me and download : https://play.google.com/store/apps/details?id=com.smktelkom.hajiku`,
         social: Share.Social.WHATSAPP
       };
       Share.shareSingle(shareOptions);
@@ -76,7 +69,9 @@ export default class Component extends React.Component {
     try {
       const shareOptions = {
         title: 'Share via',
-        message: `Can You Beat My Score ? This is my score :  ${this.state.nilai}`,
+        message: `Can You Beat My Score ? This is my score :  ${
+          this.state.nilai
+        } \n Beat me and download : https://play.google.com/store/apps/details?id=com.smktelkom.hajiku`,
         social: Share.Social.FACEBOOK
       };
       Share.shareSingle(shareOptions);
@@ -162,10 +157,11 @@ export default class Component extends React.Component {
         </View>
         <View
           style={{
+            flex: 1,
             backgroundColor: white,
             width: metrics.screenWidth,
-            marginTop: scale(24),
-            height: scale(240),
+            justifyContent: 'flex-end',
+            marginTop: scale(44),
             borderTopRightRadius: 50,
             borderTopLeftRadius: 50,
             padding: scale(24)

@@ -7,7 +7,7 @@
 /* eslint-disable import/default */
 /* eslint-disable react-native/no-color-literals */
 import React from 'react';
-import { View, Text, TouchableOpacity, Modal, Alert, ScrollView } from 'react-native';
+import { View, Text, TouchableOpacity, Modal, Alert, ScrollView, StatusBar } from 'react-native';
 import PropTypes from 'prop-types';
 import Button from '../../components/elements/Button';
 import Header from '../../components/elements/Header';
@@ -41,6 +41,7 @@ export default class Component extends React.Component {
     this._getparams();
   }
   _getparams = async () => {
+    StatusBar.setHidden(false);
     const { params } = this.props.navigation.state;
     const getindex = params ? params.index : 'umroh';
     const result = await ENDPOINT.quizById(getindex);

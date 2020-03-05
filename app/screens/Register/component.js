@@ -1,7 +1,7 @@
 /* eslint-disable react-native/no-color-literals */
 /* eslint-disable react/no-unused-state */
 import React from 'react';
-import { View, TextInput, Text, TouchableOpacity, ToastAndroid, Alert, ScrollView } from 'react-native';
+import { View, TextInput, Text, TouchableOpacity, ToastAndroid, Alert, ScrollView, StatusBar } from 'react-native';
 import PropTypes from 'prop-types';
 import Button from '../../components/elements/Button';
 import Account from '../../../assets/svgs/Account';
@@ -24,6 +24,9 @@ export default class Component extends React.Component {
       hidden: true
     };
     // this._showPass = this._showPass.bind(this);
+  }
+  componentDidMount() {
+    StatusBar.setHidden(false);
   }
   _onPress = async () => {
     const { fullname, username, email, password } = this.state;

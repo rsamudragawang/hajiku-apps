@@ -26,7 +26,7 @@ export default class Component extends React.Component {
       video: true,
       title: '',
       desc: '',
-      imageLink: 'https://miro.medium.com/max/328/1*R91n_x759FWmHFhIxET9yA.png',
+      imageLink: '',
       videoLink: '',
       subMateri: [],
       isReady: false,

@@ -1,6 +1,6 @@
 /* eslint-disable react-native/no-color-literals */
 import React from 'react';
-import { View, Image } from 'react-native';
+import { View, Image, StatusBar } from 'react-native';
 import PropTypes from 'prop-types';
 import IMAGES from '../../configs/images';
 import styles from './styles';
@@ -8,6 +8,9 @@ import Logo from '../../../assets/svgs/Logo';
 import Button from '../../components/elements/Button';
 
 export default class Component extends React.Component {
+  componentDidMount() {
+    StatusBar.setHidden(false);
+  }
   _onPress = () => {
     this.props.navigation.navigate('App');
   };

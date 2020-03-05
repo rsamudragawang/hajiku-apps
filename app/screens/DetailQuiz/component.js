@@ -23,7 +23,7 @@ export default class Component extends React.Component {
       video: true,
       title: '',
       desc: '',
-      imageLink: 'https://miro.medium.com/max/328/1*R91n_x759FWmHFhIxET9yA.png',
+      imageLink: '',
       isReady: false,
       status: '',
       quality: '',
@@ -131,29 +131,18 @@ export default class Component extends React.Component {
           >
             {this.state.desc}
           </Text>
-          {/* <Button
-            onPress={() => this._toDetail(this.state.idsoal)}
-            title="Mulai Sekarang"
-            customContainer={{
-              backgroundColor: '#FF5151',
-              borderRadius: 5,
-              width: scale(315),
-              height: 50,
-              marginBottom: 10,
-              marginLeft: 15
-            }}
-            customText={{ color: '#fff', letterSpacing: 300 }}
-          /> */}
-          <Button
-            onPress={() => this._toDetail(this.state.idsoal)}
-            title="Masuk"
-            customContainer={{
-              backgroundColor: '#FF5151',
-              width: '100%',
-              height: 50
-            }}
-            customText={{ color: '#fff', fontFamily: 'Montserrat-Bold' }}
-          />
+          <View style={{ marginTop: scale(50), marginBottom: scale(10) }}>
+            <Button
+              onPress={() => this._toDetail(this.state.idsoal)}
+              title="Masuk"
+              customContainer={{
+                backgroundColor: '#FF5151',
+                width: '100%',
+                height: 50
+              }}
+              customText={{ color: '#fff', fontFamily: 'Montserrat-Bold' }}
+            />
+          </View>
         </ScrollView>
       </View>
     );

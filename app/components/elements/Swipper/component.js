@@ -11,6 +11,7 @@ import PropTypes from 'prop-types';
 import Button from '../Button';
 import METRICS from '../../../constants/metrics';
 import styles from './styles';
+import { scale } from '../../../utils/scaling';
 
 const width = METRICS.screenWidth;
 const height = METRICS.screenHeight;
@@ -218,15 +219,15 @@ export default class Swiper extends React.Component {
           style={{
             // flexDirection: 'row',
             flex: 1,
-            marginLeft: 16,
-            marginRight: 16
+            marginLeft: scale(16),
+            marginRight: scale(16)
           }}
         >
-          <View style={{ alignItems: 'flex-end' }}>
+          <View style={{ alignItems: 'flex-end', bottom: scale(30) }}>
             <Button
               customContainer={{
-                height: 50,
-                width: 150,
+                height: scale(50),
+                width: scale(150),
                 backgroundColor: '#5D7DFF',
                 borderWidth: 1,
                 borderColor: '#5D7DFF'
@@ -243,16 +244,16 @@ export default class Swiper extends React.Component {
             style={{
               flexDirection: 'row',
               flex: 1,
-              marginLeft: 16,
-              marginRight: 16
+              marginLeft: scale(16),
+              marginRight: scale(16)
               // padding: 30
             }}
           >
-            <View style={{ alignItems: 'flex-start', flex: 1 }}>
+            <View style={{ alignItems: 'flex-start', flex: 1,  bottom: scale(30) }}>
               <Button
                 customContainer={{
-                  height: 50,
-                  width: 150,
+                  height: scale(50),
+                  width: scale(150),
                   backgroundColor: '#FFF',
                   borderWidth: 1,
                   borderColor: '#5D7DFF'
@@ -262,11 +263,11 @@ export default class Swiper extends React.Component {
                 customText={{ color: '#5D7DFF' }}
               />
             </View>
-            <View style={{ alignItems: 'flex-end' }}>
+            <View style={{ alignItems: 'flex-end', bottom: scale(30) }}>
               <Button
                 customContainer={{
-                  height: 50,
-                  width: 150,
+                  height: scale(50),
+                  width: scale(150),
                   backgroundColor: '#5D7DFF',
                   borderWidth: 1,
                   borderColor: '#5D7DFF'
@@ -282,15 +283,15 @@ export default class Swiper extends React.Component {
             style={{
               flexDirection: 'row',
               flex: 1,
-              marginLeft: 16,
-              marginRight: 16
+              marginLeft: scale(16),
+              marginRight: scale(16)
             }}
           >
-            <View style={{ alignItems: 'flex-start', flex: 1 }}>
+            <View style={{ alignItems: 'flex-start', flex: 1, bottom: scale(30) }}>
               <Button
                 customContainer={{
-                  height: 50,
-                  width: 150,
+                  height: scale(50),
+                  width: scale(150),
                   backgroundColor: '#FFF',
                   borderWidth: 1,
                   borderColor: '#5D7DFF'
@@ -300,11 +301,11 @@ export default class Swiper extends React.Component {
                 customText={{ color: '#5D7DFF' }}
               />
             </View>
-            <View style={{ alignItems: 'flex-end' }}>
+            <View style={{ alignItems: 'flex-end', bottom: scale(30) }}>
               <Button
                 customContainer={{
-                  height: 50,
-                  width: 150,
+                  height: scale(50),
+                  width: scale(150),
                   backgroundColor: '#5D7DFF',
                   borderWidth: 1,
                   borderColor: '#5D7DFF'
@@ -323,14 +324,11 @@ export default class Swiper extends React.Component {
   
   render = ({ children } = this.props) => (
     <View style={[styles.container, styles.fullScreen]}>
-      {/* {console.log("length",children.length)} */}
+      {/* <ScrollView> */}
       {this.renderScrollView(children)}
       {this.renderButton()}
+      {/* </ScrollView> */}
       
-      {/* <Text>test</Text> */}
-      {/* {this.renderPagination()} */}
-      {/* <View style={{ justifyContent: 'flex-end'}}> */}
-      {/* </View> */}
     </View>
   );
 }

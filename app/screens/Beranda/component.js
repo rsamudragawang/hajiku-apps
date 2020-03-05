@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, ImageBackground, Text, ScrollView, TouchableOpacity } from 'react-native';
+import { View, ImageBackground, Text, ScrollView, TouchableOpacity, StatusBar } from 'react-native';
 import PropTypes from 'prop-types';
 import styles from './styles';
 import IMAGES from '../../configs/images';
@@ -30,6 +30,7 @@ export default class Component extends React.Component {
     this.props.navigation.navigate('DetailMateri', { index, type });
   };
   _getData = async () => {
+    StatusBar.setHidden(false);
     const result = await ENDPOINT.getAll('discover');
     const nameStorage = await storage.get(STORAGE_KEY.NAME);
     const split = nameStorage.split(' ');
