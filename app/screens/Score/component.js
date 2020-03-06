@@ -33,15 +33,19 @@ export default class Component extends React.Component {
     const answer = params ? params.result : 'bakaa';
     const soal = params ? params.soal : 'bakaa';
     const isQuiz = params ? params.isQuiz : false;
-    const result = await ENDPOINT.getNilai(getindex, answer);
-    this.setState({
-      soal,
-      nilai: result.data.value,
-      trueAnswer: result.data.trueAnswer,
-      falseAnswer: result.data.falseAnswer,
-      isQuiz,
-      index: getindex
-    });
+    try {
+      const result = await ENDPOINT.getNilai(getindex, answer);
+      this.setState({
+        soal,
+        nilai: result.data.value,
+        trueAnswer: result.data.trueAnswer,
+        falseAnswer: result.data.falseAnswer,
+        isQuiz,
+        index: getindex
+      });
+    } catch (error) {
+      console.log('Hai');
+    }
   };
   _onPress = () => {
     this.props.navigation.navigate('Beranda');
@@ -170,16 +174,16 @@ export default class Component extends React.Component {
           {this.state.isQuiz ? (
             <View>
               <Text style={{ fontSize: 18, fontWeight: '800' }}>Yuk share ke temen-temen kamu</Text>
-              <View style={{ flexDirection: 'row', marginBottom: scale(43) }}>
+              <View style={{ flexDirection: 'row', marginBottom: scale(16) }}>
                 <TouchableOpacity onPress={this._onPressShareWA} style={{ marginLeft: scale(17) }}>
                   <Image
-                    style={{ width: scale(52), height: scale(50), marginTop: scale(16) }}
+                    style={{ width: scale(52), height: scale(50), marginTop: scale(8) }}
                     source={IMAGES.iconWa}
                   />
                 </TouchableOpacity>
                 <TouchableOpacity onPress={this._onPressShareFB} style={{ marginLeft: scale(17) }}>
                   <Image
-                    style={{ width: scale(52), height: scale(50), marginTop: scale(16) }}
+                    style={{ width: scale(52), height: scale(50), marginTop: scale(8) }}
                     source={IMAGES.iconFb}
                   />
                 </TouchableOpacity>
@@ -187,7 +191,7 @@ export default class Component extends React.Component {
             </View>
           ) : (
             <View>
-              <View style={{ flexDirection: 'row', marginBottom: scale(43) }}>
+              <View style={{ flexDirection: 'row', marginBottom: scale(16), marginTop: scale(48) }}>
                 <Button
                   customContainer={{
                     height: 50,

@@ -60,7 +60,6 @@ export default class Component extends React.Component {
     const index = this.state.index;
     const soal = this.state.data.length;
     const isQuiz = this.state.isQuiz;
-    console.log(isQuiz);
     this.setState({ modalVisible: !this.state.modalVisible });
     this.props.navigation.navigate('Score', { result, index, soal, isQuiz });
   };
@@ -80,8 +79,12 @@ export default class Component extends React.Component {
 
   _searchValue = (key, value) => {
     for (let i = 0; i < this.state.jawaban.length; i++) {
-      if (this.state.jawaban[i][key] === value) {
-        return true;
+      try {
+        if (this.state.jawaban[i][key] === value) {
+          return true;
+        }
+      } catch (error) {
+        console.log('Hai');
       }
     }
   };
@@ -123,6 +126,7 @@ export default class Component extends React.Component {
           <View
             style={{
               flex: 1,
+              backgroundColor: 'rgba(52, 52, 52, 0.8)',
               flexDirection: 'column',
               justifyContent: 'center',
               alignItems: 'center'
@@ -131,6 +135,7 @@ export default class Component extends React.Component {
           >
             <View
               style={{
+                zIndex: 1,
                 width: scale(306),
                 height: scale(360),
                 backgroundColor: '#FFF',
@@ -241,7 +246,7 @@ export default class Component extends React.Component {
                   </View>
                 </TouchableOpacity>
               ) : (
-                <TouchableOpacity onPress={() => this._setAnswer(i.toString(), data[0].toString())}>
+                <TouchableOpacity onPress={() => this._setAnswer(i, data[0].toString())}>
                   <View
                     style={{
                       alignSelf: 'baseline',
