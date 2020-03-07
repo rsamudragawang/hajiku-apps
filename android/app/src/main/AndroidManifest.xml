@@ -16,6 +16,9 @@
       android:roundIcon="@mipmap/ic_launcher"
       android:allowBackup="false"
       android:theme="@style/AppTheme">
+      <meta-data
+            android:name="com.google.android.gms.ads.APPLICATION_ID"
+            android:value="ca-app-pub-4985928852187036~6801313859"/>
       <activity
         android:screenOrientation="sensorPortrait"
         android:name=".MainActivity"

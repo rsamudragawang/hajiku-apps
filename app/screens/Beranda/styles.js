@@ -45,7 +45,7 @@ const styles = StyleSheet.create({
   },
   containerDiscover: {
     borderRadius: 4,
-    marginLeft: scale(15),
+    alignItems: 'center',
     marginTop: scale(16)
   },
   imageBackground: {
@@ -66,7 +66,9 @@ const styles = StyleSheet.create({
   discover: {
     color: '#29291E',
     marginTop: scale(32),
-    paddingHorizontal: scale(15),
+    alignItems: 'center',
+    flex: 1,
+    paddingHorizontal: scale(16),
     fontSize: 20,
     fontFamily: 'Montserrat-Bold'
   },

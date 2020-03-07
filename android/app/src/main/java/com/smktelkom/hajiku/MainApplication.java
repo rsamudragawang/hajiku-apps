@@ -7,6 +7,7 @@ import com.facebook.react.bridge.JavaScriptExecutorFactory;
 import android.app.Application;
 
 import com.facebook.react.ReactApplication;
+import com.sbugert.rnadmob.RNAdMobPackage;
 import com.inprogress.reactnativeyoutube.ReactNativeYouTube;
 import com.horcrux.svg.SvgPackage;
 import cl.json.RNSharePackage;

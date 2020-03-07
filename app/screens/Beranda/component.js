@@ -1,6 +1,7 @@
 import React from 'react';
 import { View, ImageBackground, Text, ScrollView, TouchableOpacity, StatusBar } from 'react-native';
 import PropTypes from 'prop-types';
+import { AdMobInterstitial } from 'react-native-admob';
 import styles from './styles';
 import IMAGES from '../../configs/images';
 import IconHaji from '../../../assets/svgs/IconHaji';
@@ -30,6 +31,13 @@ export default class Component extends React.Component {
     this.props.navigation.navigate('DetailMateri', { index, type });
   };
   _getData = async () => {
+    try {
+      AdMobInterstitial.setAdUnitID('ca-app-pub-4985928852187036/7404497827');
+      AdMobInterstitial.setTestDevices([AdMobInterstitial.simulatorId]);
+      AdMobInterstitial.requestAd().then(() => AdMobInterstitial.showAd());
+    } catch (error) {
+      console.log('Hai');
+    }
     StatusBar.setHidden(false);
     const result = await ENDPOINT.getAll('discover');
     const nameStorage = await storage.get(STORAGE_KEY.NAME);
@@ -56,13 +64,13 @@ export default class Component extends React.Component {
               <Text style={styles.textHello}>Hallo,</Text>
               <Text style={styles.textName}>{this.state.name}</Text>
             </View>
-            <View style={{ flexDirection: 'row', marginLeft: scale(15), marginRight: scale(15) }}>
+            <View style={{ paddingLeft: scale(12), paddingRight: scale(16), flexDirection: 'row' }}>
               <TouchableOpacity onPress={() => this._toListMateri('haji')}>
                 <View style={styles.cardHaji}>
                   <View style={{ marginTop: scale(15), marginLeft: scale(15), marginBottom: scale(8) }}>
                     <IconHaji />
                   </View>
-                  <View style={{ marginLeft: 15 }}>
+                  <View style={{ marginLeft: scale(15) }}>
                     <Text style={styles.titleCard}>Haji</Text>
                     <Text style={styles.contentCard}>{`${this.state.jumlahMateri}  Materi`}</Text>
                   </View>
@@ -81,7 +89,7 @@ export default class Component extends React.Component {
               </TouchableOpacity>
             </View>
           </ImageBackground>
-          <View style={{ flexDirection: 'row', marginLeft: scale(15) }}>
+          <View style={{ flexDirection: 'row', paddingLeft: scale(12), paddingRight: scale(16) }}>
             <TouchableOpacity onPress={() => this._toQuiz()}>
               <View style={styles.cardQuiz}>
                 <View style={{ marginTop: scale(15), marginLeft: scale(15), marginBottom: scale(8) }}>
