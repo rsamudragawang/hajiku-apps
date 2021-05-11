@@ -15,7 +15,7 @@
     "test:coverage": "npm run test -- --coverage "
   },
   "dependencies": {
-    "lodash": "^4.17.10",
+    "lodash": "^4.17.21",
     "moment": "^2.22.2",
     "react": "16.8.6",
     "react-native": "0.60.5",
